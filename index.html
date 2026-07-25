@@ -1757,8 +1757,19 @@ function setBase(k){if(_baseL)map.removeLayer(_baseL);_baseL=L.tileLayer(BASES[k
 setBase('light');
 
 /* layer groups, keyed by the zoom at which they appear */
-var G={};['sys','plant','capture','airport','gw','surf','wells','schools','samples','trace','flow','cluster'].forEach(function(k){G[k]=L.layerGroup();});
+var G={};['sys','plant','capture','airport','gw','surf','wells','schools','samples','trace','flow','cluster','heat'].forEach(function(k){G[k]=L.layerGroup();});
 G.sys.addTo(map);G.plant.addTo(map);G.trace.addTo(map);G.flow.addTo(map);
+/* PFAS intensity heat field - measured foam sources, red=worst -> orange halo. Off until toggled. */
+(function(){try{
+ map.createPane('rwheat');var pn=map.getPane('rwheat');pn.style.zIndex=355;pn.style.mixBlendMode='screen';pn.style.filter='blur(12px)';pn.style.pointerEvents='none';
+ var hr=L.canvas({pane:'rwheat',padding:0.6});
+ var HEAT=[[25.882,-80.2504,22980],[25.8908,-80.3326,7367],[25.8087,-80.3477,1280],[25.7959,-80.2871,900],[25.822,-80.315,600],[25.8462,-80.1553,420],[25.907,-80.284,380]];
+ var maxL=Math.log(22980);
+ HEAT.forEach(function(h){var t=Math.log(h[2])/maxL;var R=1400+t*5200;
+  var rings=[[R,'#ff6a2a',0.16*t+0.04],[R*0.62,'#ff3a1e',0.20*t+0.05],[R*0.33,'#ff2d16',0.26*t+0.06]];
+  rings.forEach(function(r){L.circle([h[0],h[1]],{renderer:hr,pane:'rwheat',radius:r[0],stroke:false,fillColor:r[1],fillOpacity:r[2],interactive:false}).addTo(G.heat);});
+ });
+}catch(e){}})();
 var SVC=[],WELLS=[],ZIPC={},SCHOOLS=[];
 var STATE={stage:null,zip:null,here:null,homeGone:false};
 
@@ -3672,7 +3683,8 @@ var LG=[
  ['surf','#7fd4e8','Surface-water hotspots'],
  ['bay','#37d98a','Biscayne Bay transects'],
  ['taps','#f0a02a','Academic tap samples'],
- ['schools','#5aa9e6','Schools + daycares']
+ ['schools','#5aa9e6','Schools + daycares'],
+ ['heat','#ff4d3d','PFAS intensity heat field']
 ];
 var MINZ={}; ZOOM_RULES.forEach(function(r){MINZ[r.g]=r.min;});
 function lgGroups(g){return GROUPMAP[g]||[g];}
