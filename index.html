@@ -4334,5 +4334,129 @@ window.rwDoc=function(id){
  }, 420);
 };
 </script>
+<style id="rwMobileFix">
+/* ============================================================
+   MOBILE AUDIT FIXES — appended last for source-order priority
+   ============================================================ */
+
+/* ---------- 1. LANDING: get the ZIP + CTA above the fold ---------- */
+@media(max-width:900px){
+  /* give the hero more room: map takes less of the screen */
+  #home .rw-mapside{height:30vh!important}
+  #home .rw-left{top:30vh!important}
+  #home .rw-left .h-hero{min-height:0!important;padding:12px 20px 20px!important}
+
+  /* nav was consuming ~146px by wrapping — make it one tight row */
+  #home .rw-nav{padding:10px 14px!important;align-items:flex-start!important;gap:8px}
+  #home .rw-nav .rw-mast{font-size:9.5px!important;letter-spacing:.1em!important;
+    max-width:88px;line-height:1.3;flex:0 0 auto}
+  #home .rw-nav .rw-links{display:flex!important;flex-wrap:wrap!important;
+    gap:2px 11px!important;justify-content:flex-end!important;align-items:center;flex:1 1 auto}
+  #home .rw-nav .rw-links a{font-size:10px!important;letter-spacing:.05em!important;
+    padding:7px 0!important;white-space:nowrap}
+  #home .rw-nav .rw-links a.rw-lang{padding:4px 9px!important;font-size:10px!important}
+
+  /* tighten the hero stack */
+  #home .rv-kick{margin-bottom:10px!important}
+  #home .rv-place{margin-bottom:4px!important}
+  #home .rv-q{font-size:clamp(25px,7vw,31px)!important;line-height:1.06!important}
+  #home .rv-tag{margin-top:10px!important;font-size:14.5px!important;line-height:1.5!important}
+  #home .rv-form{margin-top:16px!important}
+  #home .rv-form input{height:56px!important;font-size:16px!important}
+  #home .rv-form button{height:56px!important}
+  #home .rv-err{margin-top:7px!important}
+  #home .rv-micro{margin-top:8px!important;font-size:10px!important;line-height:1.5!important}
+}
+/* very short screens (iPhone SE and similar) */
+@media(max-width:900px) and (max-height:700px){
+  #home .rw-mapside{height:22vh!important}
+  #home .rw-left{top:22vh!important}
+  #home .rv-q{font-size:24px!important}
+  #home .rv-tag{font-size:13.5px!important;margin-top:8px!important}
+  #home .rv-form{margin-top:12px!important}
+  #home .rv-micro{display:none!important}
+}
+
+/* ---------- 2. "How to read this map" belongs to the map only ---------- */
+/* it was overlaying the landing, the score card and the evidence panel */
+#howto{display:none!important}
+body:not(.rw-landing):not(.rw-scoreview) #howto.on{display:block!important}
+body:has(#rwPanel.on) #howto{display:none!important}
+@media(max-width:900px){
+  #howto{left:112px!important;right:8px!important;top:112px!important;bottom:auto!important;
+    font-size:12px!important;line-height:1.45!important;padding:11px 13px!important;
+    max-height:32vh;overflow:auto;z-index:900!important}
+}
+@media(max-width:700px){#howto{left:106px!important}}
+
+/* ---------- 3. Header nav on panel views (was colliding with wordmark) ---------- */
+@media(max-width:900px){
+  #rwPanelHead{padding:8px 10px!important}
+  #rwPanelHead .ph-mast{font-size:8.5px!important;letter-spacing:.1em!important;
+    max-width:74px;line-height:1.25;overflow:hidden}
+  #rwPanelHead .ph-nav{gap:2px 10px!important;justify-content:flex-end!important;flex-wrap:wrap!important}
+  #rwPanelHead .ph-nav a{font-size:9.5px!important;padding:9px 0!important;white-space:nowrap}
+}
+
+/* ---------- 4. MAP: reclaim width from the rail ---------- */
+@media(max-width:900px){
+  #rail{width:104px!important;padding:6px 5px!important}
+  /* reclaim width inside each card so labels wrap at spaces, never mid-word */
+  #rail .rstep{padding:8px 6px!important;overflow:hidden!important;
+    display:flex!important;align-items:center!important;gap:5px!important}
+  #rail .rstep .ri{display:none!important}
+  #rail .rstep .rnum{flex:0 0 auto!important;width:17px!important;height:17px!important;
+    min-width:17px!important;font-size:9px!important;line-height:17px!important}
+  #rail .rstep .rn{font-size:9.5px!important;line-height:1.2!important;
+    word-break:normal!important;overflow-wrap:break-word!important;hyphens:none!important;
+    display:block;flex:1 1 auto;min-width:0}
+  #rail .rhead{font-size:8.5px!important;line-height:1.25!important}
+  #bottom{left:110px!important}
+}
+@media(max-width:700px){
+  #rail{width:98px!important}
+  #bottom{left:104px!important}
+}
+
+/* ---------- 5. MAP: legend must not bury the markers or the share bar ---------- */
+@media(max-width:900px){
+  /* explicit vertical stack so nothing lands on top of anything else:
+     attribution 0-34 | share 44 | toast 92 | legend 136+ */
+  .legend{max-width:38vw!important;max-height:24vh!important;bottom:136px!important;
+    right:6px!important;font-size:10px!important;padding:9px 10px!important;line-height:1.3!important}
+  .legend .lg-row,.legend div{gap:6px}
+  #bottom{bottom:92px!important;z-index:860!important}
+  #shareBtn{bottom:44px!important;z-index:880!important}
+  #shareToast{bottom:86px!important;z-index:1500!important}
+}
+
+/* ---------- 6. Leaflet chrome ---------- */
+@media(max-width:900px){
+  .leaflet-control-attribution{font-size:8.5px!important;line-height:1.25!important;
+    max-width:62vw;white-space:normal;padding:1px 4px!important;opacity:.85}
+  /* lift the scale bar clear of the attribution line */
+  .leaflet-control-scale{margin-bottom:40px!important}
+  .leaflet-bottom.leaflet-left{left:104px!important}
+}
+@media(max-width:700px){.leaflet-bottom.leaflet-left{left:98px!important}}
+
+/* ---------- 7. Tap targets: nothing interactive under ~44px ---------- */
+@media(max-width:900px){
+  #topsearch input{min-height:44px!important}
+  #topsearch button,#helpBtn{min-height:44px!important}
+  #inspect .i-tab{padding:12px 10px!important;min-height:44px;font-size:11.5px!important}
+  #inspect .i-close{width:44px!important;height:44px!important}
+  .rw-lang,#home .rw-nav .rw-links a.rw-lang{min-height:32px;display:inline-flex;align-items:center}
+  .ht-x{display:inline-block;padding:8px 10px;min-height:36px}
+}
+
+/* short screens: keep the legend clear of the toast + share stack */
+@media(max-width:900px) and (max-height:720px){
+  .legend{max-height:19vh!important;bottom:150px!important;font-size:9.5px!important}
+  #bottom{bottom:88px!important}
+  #shareBtn{bottom:40px!important}
+}
+</style>
+
 </body>
 </html>
