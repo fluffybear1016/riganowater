@@ -1092,6 +1092,7 @@ body,.wsec,.wsec p,.wsec div,.mono,[class*="mono"],code,table,.ty-num,.tg-num .n
 <!-- STAGE BANNER -->
 <div id="banner"><div class="b-k" id="bkick">Stage 1</div><div class="b-q" id="bq">Is your water contaminated?</div></div>
 <div id="howto" role="status"><b>How to use this map:</b> type your ZIP (top-left) or tap your neighborhood &rarr; read the <b>verdict</b> + <b>Current Evidence</b> bars &rarr; then walk the <b>6 numbered questions</b> down the left edge. Toggle any dataset in the <b>Map layers</b> panel (bottom right) &mdash; and <b>click any colored marker</b> for the full detail behind it. <span class="ht-x" onclick="this.parentNode.classList.remove('on')">Got it &times;</span></div>
+<script>(function(){try{if(window.innerWidth<=760){var h=document.getElementById("howto");if(h){h.innerHTML='<b>How to read this map.</b> Enter your ZIP (top-left) or tap any colored dot for the detail behind it. The 6 questions run down the left edge. <span class="ht-x" onclick="this.parentNode.classList.remove(&#39;on&#39;)">Got it &times;</span>';var kill=function(){h.classList.remove("on");window.removeEventListener("pointerdown",kill,true);};setTimeout(function(){window.addEventListener("pointerdown",kill,true);},900);}}}catch(e){}})();</script>
 
 <!-- LEFT RAIL -->
 <style id="railHomeStyle">
@@ -2019,7 +2020,7 @@ function traceGlass(la,lo,label){
     var op=0,iv=setInterval(function(){op+=0.12;line.setStyle({opacity:Math.min(.85,op)});if(op>=.85)clearInterval(iv);},22);
    }
    /* label pill */
-   L.marker(node.p,{icon:L.divIcon({className:'',iconSize:[180,30],iconAnchor:[-8,8],
+   L.marker(node.p,{icon:L.divIcon({className:'maplbl',iconSize:[180,30],iconAnchor:[-8,8],
      html:'<div style="font-family:var(--mono);font-size:9.5px;color:'+node.c+';white-space:nowrap;text-shadow:0 0 6px #000;line-height:1.3">'+
      '<b style="color:#fff">'+esc(node.t)+'</b>'+(node.v?' · '+node.v:'')+'</div>'})}).addTo(G.trace);
   },delay));
@@ -2839,14 +2840,14 @@ function drawCorridor(){
    .bindTooltip('<b>'+m[0]+'</b> — thyroid '+r.toFixed(1)+' /100k  ·  U.S. 12.9',{className:'lbl'}).addTo(G.cluster);
  });
  [['MIA · airport foam',25.7959,-80.2871],['Fire Academy · 22,980 ppt',25.882,-80.2504],['Hialeah Fire · 7,080 ppt',25.8908,-80.3326],['Doral Fire · 1,280 ppt',25.8087,-80.3477]].forEach(function(sx){
-  L.marker([sx[1],sx[2]],{zIndexOffset:1000,icon:L.divIcon({className:'',iconSize:[220,20],iconAnchor:[9,10],html:'<div style="display:flex;align-items:center;gap:5px;white-space:nowrap;pointer-events:none"><span style="font-size:19px;line-height:1;color:#ffcf3f;text-shadow:0 0 3px #000,0 0 5px #000">&#9733;</span><span style="font-family:ui-monospace,monospace;font-size:11px;font-weight:700;color:#3a2600;background:#ffcf3f;padding:2px 6px;border-radius:2px;box-shadow:0 2px 6px rgba(0,0,0,.45)">'+sx[0]+'</span></div>'})})
+  L.marker([sx[1],sx[2]],{zIndexOffset:1000,icon:L.divIcon({className:'maplbl',iconSize:[220,20],iconAnchor:[9,10],html:'<div style="display:flex;align-items:center;gap:5px;white-space:nowrap;pointer-events:none"><span style="font-size:19px;line-height:1;color:#ffcf3f;text-shadow:0 0 3px #000,0 0 5px #000">&#9733;</span><span style="font-family:ui-monospace,monospace;font-size:11px;font-weight:700;color:#3a2600;background:#ffcf3f;padding:2px 6px;border-radius:2px;box-shadow:0 2px 6px rgba(0,0,0,.45)">'+sx[0]+'</span></div>'})})
    .bindTooltip('<b>'+sx[0]+'</b> — firefighting-foam (AFFF) source; groundwater at monitoring wells, not drinking water',{className:'lbl'}).addTo(G.cluster);
  });
  var c=[25.822,-80.315];
  L.circle(c,{radius:8500,color:'#e08800',weight:1.7,dashArray:'7,6',fill:false,opacity:.95}).addTo(G.cluster);
  L.circle([25.805,-80.34],{radius:4200,color:'#c81e1e',weight:1.8,fill:true,fillColor:'#c81e1e',fillOpacity:.06,opacity:.9}).addTo(G.cluster);
- L.marker(c,{icon:L.divIcon({className:'',iconSize:[248,40],iconAnchor:[-6,20],html:'<div style="font-family:var(--mono);white-space:nowrap;background:rgba(9,13,18,.92);border:1px solid rgba(255,111,94,.55);border-left:3px solid #ff4d3d;border-radius:3px;padding:5px 9px;box-shadow:0 6px 20px rgba(0,0,0,.55)"><div style="font-size:11px;font-weight:700;color:#ff8b80;letter-spacing:.03em">THYROID CANCER &middot; +40% ABOVE U.S.</div><div style="font-size:9px;font-weight:700;color:#dfe7ee;letter-spacing:.05em;margin-top:3px">CLUSTERED WHERE THE AIRPORT FOAM REACHES THE WATER</div></div>'})}).addTo(G.cluster);
- L.marker([25.805,-80.34],{icon:L.divIcon({className:'',iconSize:[190,16],iconAnchor:[-6,-8],html:'<div style="font-family:var(--mono);font-size:9px;font-weight:700;color:#b01818;white-space:nowrap;text-shadow:0 0 4px #fff,0 0 4px #fff">kidney cluster &middot; RR 1.65 &middot; p 0.003</div>'})}).addTo(G.cluster);
+ L.marker(c,{icon:L.divIcon({className:'maplbl',iconSize:[248,40],iconAnchor:[-6,20],html:'<div style="font-family:var(--mono);white-space:nowrap;background:rgba(9,13,18,.92);border:1px solid rgba(255,111,94,.55);border-left:3px solid #ff4d3d;border-radius:3px;padding:5px 9px;box-shadow:0 6px 20px rgba(0,0,0,.55)"><div style="font-size:11px;font-weight:700;color:#ff8b80;letter-spacing:.03em">THYROID CANCER &middot; +40% ABOVE U.S.</div><div style="font-size:9px;font-weight:700;color:#dfe7ee;letter-spacing:.05em;margin-top:3px">CLUSTERED WHERE THE AIRPORT FOAM REACHES THE WATER</div></div>'})}).addTo(G.cluster);
+ L.marker([25.805,-80.34],{icon:L.divIcon({className:'maplbl',iconSize:[190,16],iconAnchor:[-6,-8],html:'<div style="font-family:var(--mono);font-size:9px;font-weight:700;color:#b01818;white-space:nowrap;text-shadow:0 0 4px #fff,0 0 4px #fff">kidney cluster &middot; RR 1.65 &middot; p 0.003</div>'})}).addTo(G.cluster);
  G.cluster.addTo(map);
 }
 function stageHealth(){
@@ -3561,7 +3562,7 @@ fetch("https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/CLEANUP_SP/MapSe
  ['Hialeah Fire Training \u00b7 7,367 ppt GW',25.8908,-80.3326,'#c98a00'],
  ['MDFR Doral \u00b7 1,280 ppt GW',25.8087,-80.3477,'#c98a00'],
  ['North Bay Village \u00b7 6:2 FTS 135.7 \u00b7 2.8\u00d7 US thyroid',25.8462,-80.1553,'#c0362a']].forEach(function(s){
- L.marker([s[1],s[2]],{interactive:false,icon:L.divIcon({className:'',iconSize:[170,14],iconAnchor:[-9,7],
+ L.marker([s[1],s[2]],{interactive:false,icon:L.divIcon({className:'maplbl',iconSize:[170,14],iconAnchor:[-9,7],
   html:'<div style="font-family:var(--mono);font-size:9px;white-space:nowrap;text-shadow:0 1px 4px rgba(255,255,255,.9),0 0 8px rgba(255,255,255,.7)"><b style="color:'+s[3]+'">'+s[0]+'</b></div>'})}).addTo(G.gw);});
 
 /* North Bay Village — featured: the hardest-hit place, labeled by what was actually measured */
@@ -3610,7 +3611,7 @@ SUSPECT.forEach(function(s){
   .on('click',function(e){L.DomEvent.stop(e);
    loadDossier({kick:w.kick,title:w.n,sub:w.sub},{summary:w.body},'summary');})
   .addTo(G.capture);
- L.marker([w.la,w.lo],{interactive:false,icon:L.divIcon({className:'',iconSize:[210,14],iconAnchor:[-11,7],
+ L.marker([w.la,w.lo],{interactive:false,icon:L.divIcon({className:'maplbl',iconSize:[210,14],iconAnchor:[-11,7],
   html:'<div style="font-family:var(--mono);font-size:9px;white-space:nowrap;text-shadow:0 1px 4px rgba(255,255,255,.9),0 0 8px rgba(255,255,255,.7)"><b style="color:#0b7488">'+w.lbl+'</b></div>'})}).addTo(G.capture);
 });
 
@@ -3628,7 +3629,7 @@ SUSPECT.forEach(function(s){
     '<div class="note" style="color:var(--mute)">Which is also the tragedy: the fix is dilution, not removal. There is only so much clean water to blend, and every year the plume grows toward the wells that are still clean.</div>'+
     '<div class="src"><b>SOURCE</b> — Eurofins job 185-5687-1 (Northwest Wellfield, 2025-10-02) · EPA UCMR5 airport-side entry points.</div>'},'summary');})
   .addTo(G.gw);
- L.marker([la,lo],{interactive:false,icon:L.divIcon({className:'',iconSize:[170,14],iconAnchor:[-15,7],html:'<div class="rw-clean-lbl">NORTHWEST WELLFIELD · PFOS 0.6 · the clean blend</div>'})}).addTo(G.gw);
+ L.marker([la,lo],{interactive:false,icon:L.divIcon({className:'maplbl',iconSize:[170,14],iconAnchor:[-15,7],html:'<div class="rw-clean-lbl">NORTHWEST WELLFIELD · PFOS 0.6 · the clean blend</div>'})}).addTo(G.gw);
 })();
 /* AIRPORTS — the narrative anchor, drawn boldest of all, on top of the AFFF family */
 var AIRPORTS=[
@@ -3656,7 +3657,7 @@ AIRPORTS.forEach(function(a){
 });
 
 /* default right panel: the county Big Picture, when the map opens with nothing selected */
-try{var _dh1=dismissHome; dismissHome=function(){_dh1(); setTimeout(function(){try{var ins=document.getElementById('inspect'); if(ins&&!ins.classList.contains('on')&&!STATE.stage){openCounty();}}catch(e){}},1100);};}catch(e){}
+try{var _dh1=dismissHome; dismissHome=function(){_dh1(); setTimeout(function(){try{var ins=document.getElementById('inspect'); if(ins&&!ins.classList.contains('on')&&!STATE.stage&&window.innerWidth>760){openCounty();}}catch(e){}},1100);};}catch(e){}
 
 /* zoom rules for the ported layers */
 ZOOM_RULES.push({g:'canals',min:10},{g:'surf',min:10},{g:'bay',min:11},{g:'taps',min:11},{g:'fdep',min:9});
@@ -3846,6 +3847,7 @@ if(typeof window!=='undefined'){ window.rwShareRank=rwShareRank; } window.rwDema
 </script>
 
 <style id="rwBetaFixCSS">
+@media(max-width:760px){.maplbl{display:none!important}.leaflet-tooltip.lbl{display:none!important}.rw-clean-lbl,.rw-air-lbl,.rw-plbl{display:none!important}#rail{width:96px!important;opacity:.92}#howto{font-size:11px!important;padding:9px 11px!important;max-height:34vh;overflow:auto;opacity:.94}}
 .pr-tiers{display:flex;flex-direction:column;gap:9px;margin:14px 0 4px}.pr-tier{padding:11px 13px;background:#fbfaf7;border:1px solid #e6e3db;border-left:3px solid #c0362a;border-radius:8px}.pr-tier-h{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c0362a;margin-bottom:5px}.pr-tier-b{font-size:13px;line-height:1.5;color:#3a4650}.pr-tier-b b{color:#12171c}
 .pr-intro{font-size:15.5px;line-height:1.55;color:#33424e;margin:8px 0 16px;max-width:64ch}.pr-role{margin:0 0 14px;padding:14px 16px;background:#fbfaf7;border:1px solid #e6e3db;border-radius:10px}.pr-role-h{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#12171c;margin-bottom:10px}.pr-ask{display:block;background:#eef6f0;border-left:3px solid #1c6e46;border-radius:6px;padding:9px 12px;font-size:14.5px;line-height:1.45;color:#173d2a;font-weight:600;margin-bottom:10px}.pr-ask span{display:block;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1c6e46;margin-bottom:4px}.pr-role-b{font-size:13.5px;line-height:1.55;color:#3a4650}.pr-role-b b{color:#12171c}.pr-role-b a{color:#c0362a;cursor:pointer;text-decoration:underline}
 .rsh-cite{display:block;font-family:var(--mono);font-size:10px;color:#8a949c;margin-top:6px;letter-spacing:.01em}
