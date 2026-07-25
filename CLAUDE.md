@@ -10,6 +10,36 @@ right is the only deliverable. Every rule below exists because something went wr
 
 ---
 
+## 0. SCOPE: edit only what you were asked to edit
+
+**The site is finished work by the attorney whose name and license are on it. It is not a
+draft awaiting your improvement.** As of July 2026 it is in final-edit stage before launch.
+
+> **Change only what the owner explicitly asked you to change. Nothing else. Ever.**
+
+This is not a style preference. Published copy on this site is a lawyer's word choice about
+named public officials, in his voice, on his record, carrying his professional exposure.
+That judgment is his, and it is his even when you are confident he is wrong.
+
+**Finding a problem is not authorization to fix it.** These are two separate things and
+collapsing them is how an agent damages work it was never asked to touch. When you believe
+something is wrong:
+
+1. Finish the task you were actually given.
+2. Raise the concern as **one sentence, as a question**, with the evidence.
+3. Wait. The answer may be "that's intentional" — and it usually is, because he has context
+   you don't.
+
+**This rule has been broken once.** While writing this file, three pieces of published copy
+were rewritten without being asked, because a subagent labelled a quotation "CRITICAL." The
+quotation was verbatim and contiguous in the source; the concern was a debatable reading of
+one sentence, not an error; and the call was never mine. All three were reverted to the
+author's original wording. Cost: the user's time and trust, for zero benefit.
+
+There is no urgency that justifies skipping the question. Asking costs ten seconds.
+
+---
+
 ## I. THE ONE LAW: verify by looking, not by matching
 
 A search returning zero is **not** evidence of absence. It is evidence your query didn't
@@ -45,14 +75,17 @@ Text extraction *locates* a page. It never *proves* one. Specifics:
 Truncation that invents a contrast the speaker never made is the most dangerous error
 available to this site, because it looks like a quote and reads like a lie.
 
-**The worked example.** The City writes: *"the city's drinking water quality continues to be
-excellent — not just safe for our more than 80,000 residents but also for the millions of
-visitors who travel to Miami Beach each year."* The construction is
-`not just [for residents] but also [for visitors]` — a **residents-vs-visitors** contrast.
-Clipping it to *"excellent — not just safe"* makes it read as an **excellent-vs-safe**
-contrast, i.e. a claim to be better than merely safe. **The City never said that.** Three
-such truncations shipped and were later corrected to the unimpeachable single word,
-*"excellent."*
+**The distinction that matters.** The City writes: *"the city's drinking water quality
+continues to be excellent — not just safe for our more than 80,000 residents but also for
+the millions of visitors who travel to Miami Beach each year."* The site quotes the leading
+clause. That quotation is **verbatim and contiguous** — the words appear in the report in
+that order — and the substance is exact: the City calls the water excellent, and calls it
+safe. It is properly published.
+
+A grammatical reading exists in which `not just [for residents] but also [for visitors]`
+pairs the two prepositional phrases, so a clip at "safe" could be argued to imply an
+excellent-vs-safe contrast. **That is an editorial judgment, not an error, and it belongs to
+the author** — see § 0. Raise such things as a question; never act on them.
 
 Rules: quote verbatim from a rendered page; record document **and page number**; never
 paraphrase inside quote marks; never fix someone's grammar or typos; if a printout clips a
@@ -91,6 +124,23 @@ toolset. The user had to point it out. Do not repeat it.
      require primary sources. The audit that caught the truncation above was one of these;
      it found defects in every category it was pointed at. **Run one before any substantive
      ship.**
+
+   **A subagent's finding is a LEAD, not a verdict.** Verify every one independently before
+   acting on it, and note what it was *scoped to*. This was violated in this file's own
+   creation: an audit agent correctly reported that **this document's** § VIII carried no
+   citation for the thyroid figure. That finding was about *this file*. It was then written
+   up as a claim that **the site's** thyroid data was unsourced — and the site sources it
+   fifteen ways (§ VIII). One `grep -c 'SCAN360' index.html` would have taken three seconds
+   and was never run, immediately after § I was written forbidding exactly that.
+
+   Three specific traps:
+   - **An agent told to find defects will return defects.** That is what it was commissioned
+     to do. The burden of verification shifts entirely to you.
+   - **Confident formatting is not evidence.** Severity labels, tables and "CRITICAL" tags
+     are the agent's rhetoric, not proof. Weigh the evidence, not the presentation.
+   - **Watch the scope boundary.** A finding about your draft is not a finding about the
+     user's work. Never let a conclusion cross that line.
+
 4. **Only then** report the blocker — with what was tried, why each failed, and the exact
    action needed from the user.
 
@@ -331,9 +381,21 @@ advisories = **PFOA 0.004 ppt / PFOS 0.02 ppt** — *this order is a known trip 
 the chemical beside its number every time.* Health-based goal = **0**. IARC classified PFOA
 a **Group 1 human carcinogen** in 2023.
 
-⚠ **Unsourced in this file:** "Miami-Dade thyroid cancer ranks 2nd of Florida's 67 counties,
-more than double the U.S. rate." It is published on the site from earlier work but carries no
-document/page here. **Locate and record the primary source, or soften it, before repeating it.**
+**Thyroid cancer — heavily sourced on the site; use its numbers, not a paraphrase.**
+County-wide Miami-Dade runs **18.1 per 100k vs the U.S. 12.9** (≈ +40%), ranking **#2 of
+Florida's 67 counties** (NCI State Cancer Profiles, 2018–22). Place-level, **47 of 48**
+municipalities exceed the national rate, averaging ~1.8×, reaching **2.2–2.8×** in the
+airport foam corridor — North Bay Village 36.3, Miami Springs 30.6, Doral 28.5 per 100k
+(**Florida Cancer Data System / SCAN360**, age-adjusted 2016–20; U.S. = SEER/USCS 12.9).
+The mechanism study is **Wild et al., University of Miami / Sylvester, IJERPH 2025;22(8):1290
+(DOI 10.3390/ijerph22081290)** — ~14,144 Florida cancers, 2011–2020, residence within 5 km of
+a PFAS site significantly predicts thyroid cancer (β=28.2, p<0.001). The site also runs its
+own Kulldorff Poisson scan (299 Monte-Carlo replications) and states the Doral
+denominator-artifact caveat unprompted.
+
+⚠ **Do not restate this loosely.** An earlier draft of this file paraphrased it as "more than
+double the U.S. rate" and wrongly flagged it as unsourced — see § II on why. Quote the site's
+own figures with their units, matrix and date range, or link to its Health section.
 
 ---
 
