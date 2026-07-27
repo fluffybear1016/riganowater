@@ -4943,6 +4943,7 @@ body.darkmap .rw-you b{color:#d7f2f8;background:rgba(8,14,20,.82);box-shadow:non
   body:has(#inspect.on.rwpeek) #bottom{bottom:176px!important}
   body:has(#inspect.on.rwpeek) #shareBtn{bottom:130px!important}
   body:has(#inspect.on:not(.rwpeek)) #shareBtn{display:none!important}
+  body:has(#inspect.on.rwhalf) #rail{bottom:calc(45vh + 4px)!important}
   body:has(#inspect.on:not(.rwpeek)) #bottom{display:none!important}
 }
 </style>
@@ -4953,7 +4954,480 @@ body.darkmap .rw-you b{color:#d7f2f8;background:rgba(8,14,20,.82);box-shadow:non
   /* the rail stops where the dossier starts, so its last buttons stay tappable;
      with the dossier open full, the dossier is the screen. */
   body:has(#inspect.on.rwpeek) #rail{bottom:126px!important}
-  body:has(#inspect.on:not(.rwpeek)) #rail{opacity:0!important;pointer-events:none!important}
+  body:has(#inspect.on:not(.rwpeek):not(.rwhalf)) #rail{opacity:0!important;pointer-events:none!important}
+}
+</style>
+<style id="rwPaperCSS">
+/* ═══════ THE MAP'S MATERIAL: frosted paper, ink, one accent (mobile, light) ═══════ */
+@media(max-width:900px){
+body.lightmap :is(#topsearch,.legend,#howto,#timeline){
+  background:rgba(250,248,243,.92)!important;
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  border:1px solid rgba(18,33,47,.12)!important;
+  box-shadow:0 2px 12px rgba(18,33,47,.12)!important;
+  color:#12212f!important}
+body.lightmap #topsearch input{color:#12212f!important}
+body.lightmap #topsearch input::placeholder{color:#75828e!important}
+body.lightmap #topsearch button{background:#0b7488!important;color:#fff!important;border:none!important;border-radius:8px!important}
+body.lightmap #howto{color:#33414d!important}
+body.lightmap #timeline{color:#12212f!important}
+body.lightmap #timeline .tl-x{background:rgba(18,33,47,.08)!important;color:#12212f!important}
+
+/* ---- the rail: paper discs, ink numbers, teal for the active step ---- */
+body.lightmap #rail{background:transparent!important;border-right:none!important}
+body.lightmap #rail .rstep{
+  background:rgba(250,248,243,.92)!important;
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  border:1px solid rgba(18,33,47,.16)!important;color:#3a4a58!important;
+  box-shadow:0 2px 10px rgba(18,33,47,.14)!important}
+body.lightmap #rail .rstep .rnum{border-color:transparent!important;color:#3a4a58!important;background:transparent!important}
+body.lightmap #rail .rstep.on{
+  background:#0b7488!important;border-color:#0b7488!important;color:#fff!important}
+body.lightmap #rail .rstep.on .rnum{background:transparent!important;color:#fff!important;border-color:transparent!important}
+body.lightmap #rail .rstep:not([data-stage]) .ri{color:#3a4a58!important}
+body.lightmap #rail .rstep.county{border-color:rgba(18,33,47,.16)!important}
+body.lightmap #rail .rstep.county .ri{color:#3a4a58!important}
+body.lightmap #rail .rstep.county.on{background:#0b7488!important;border-color:#0b7488!important}
+body.lightmap #rail .rstep.county.on .ri{color:#fff!important}
+/* the "next step" hint: no pulsing second ring - a quiet teal dot below */
+#rail .rstep.next{animation:none!important}
+body.lightmap #rail .rstep.next .rnum{border-color:transparent!important;color:#3a4a58!important}
+#rail .rstep.next::after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-2.5px;
+  width:5px;height:5px;border-radius:50%;background:#0b7488}
+body:not(.lightmap) #rail .rstep.next::after{background:#5ce0f4}
+
+/* ---- the share action: teal, not terminal cyan ---- */
+body.lightmap #shareBtn{background:#0b7488!important;color:#fff!important;border-radius:999px!important}
+
+/* ---- retire on mobile: banner pill, basemap switch, duplicate ?, timeline btn ---- */
+#banner,#baseswitch,#helpBtn,#rail #tlBtn,#rail .rstep#tlBtn{display:none!important}
+
+/* ═══════ THE DOSSIER AS EVIDENCE PAPER (item 3) ═══════ */
+body.lightmap #inspect{
+  --bg:#f4f1ea;--panel:#ffffff;--panel2:#faf8f3;
+  --line:rgba(18,33,47,.12);--line2:rgba(18,33,47,.22);
+  --ink:#12212f;--mute:#5a6b78;--dim:#75828e;--faint:#75828e;
+  --cyan:#0b7488;--amber:#a5620f;--red:#c0362a;--green:#1c6e46;--violet:#6b5bd6;--pink:#b03a6e;
+  background:#f4f1ea!important;color:#12212f!important;
+  border-top:1px solid rgba(18,33,47,.14)!important;
+  box-shadow:0 -14px 40px -18px rgba(18,33,47,.35)!important}
+body.lightmap #inspect::before{background:rgba(18,33,47,.22)!important}
+body.lightmap #inspect .i-close{background:rgba(18,33,47,.06)!important;color:#3a4a58!important;border-color:rgba(18,33,47,.18)!important}
+body.lightmap #inspect .i-kick{color:#c0362a!important}
+body.lightmap #inspect .i-tab.on{color:#12212f!important;border-bottom-color:#0b7488!important}
+body.lightmap #inspect .note{color:#4c5866!important}
+/* the inline light-on-dark colors baked into the dossier builders, remapped */
+body.lightmap #inspect [style*="#e8eff5"]{color:#12212f!important}
+body.lightmap #inspect b[style*="color:#fff"],body.lightmap #inspect span[style*="color:#fff"],body.lightmap #inspect i[style*="color:#fff"]{color:#12212f!important}
+body.lightmap #inspect [style*="#5ce0f4"],body.lightmap #inspect [style*="#7fd4e8"],body.lightmap #inspect [style*="#0d9bb5"]{color:#0b7488!important}
+body.lightmap #inspect [style*="#ff4d3d"],body.lightmap #inspect [style*="#ff8b80"],body.lightmap #inspect [style*="#ff8d81"],body.lightmap #inspect [style*="#ff8b6a"]{color:#c0362a!important}
+body.lightmap #inspect [style*="#ffce8a"],body.lightmap #inspect [style*="#f0a02a"]{color:#a5620f!important}
+body.lightmap #inspect [style*="#a9b8c8"],body.lightmap #inspect [style*="#c3d0dc"],body.lightmap #inspect [style*="#8496a8"],body.lightmap #inspect [style*="#c9d4de"]{color:#5a6b78!important}
+body.lightmap #inspect [style*="#6fe3a0"]{color:#1c6e46!important}
+body.lightmap #inspect [style*="#b7abfb"]{color:#6b5bd6!important}
+/* faint white-wash panels built for a dark sheet become white cards on paper */
+body.lightmap #inspect [style*="rgba(255,255,255,.0"],body.lightmap #inspect [style*="rgba(255,255,255,0.0"]{
+  background:#fff!important;border-color:rgba(18,33,47,.10)!important}
+
+/* ═══════ PRESSED STATES - every control acknowledges the finger (item 10) ═══════ */
+#rail .rstep,#shareBtn,#topsearch button,.legend #lgH,.lg-row,#inspect .i-tab,#inspect .i-close,#iPeek,#rwHomePill,#rwLocChip{
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#rail .rstep:active,#shareBtn:active,#topsearch button:active,#inspect .i-close:active,#rwHomePill:active,#rwLocChip:active{
+  transform:scale(.95)!important;filter:brightness(.96);transition:transform 80ms!important}
+.lg-row:active,#inspect .i-tab:active{filter:brightness(.94)}
+/* 44px hit areas for the 34px discs */
+#rail .rstep::before{content:'';position:absolute;inset:-6px;border-radius:50%}
+}
+</style>
+<style id="rwWayfindCSS">
+/* the Home pill and the location chip - the mobile map's top row */
+#rwHomePill{position:fixed;top:8px;left:8px;z-index:640;height:40px;display:none;
+  align-items:center;gap:5px;padding:0 15px 0 11px;border-radius:20px;border:1px solid rgba(18,33,47,.14);
+  background:rgba(250,248,243,.94);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  box-shadow:0 2px 12px rgba(18,33,47,.16);cursor:pointer}
+#rwHomePill .hp-ch{font-size:19px;line-height:1;color:#0b7488;font-weight:700;margin-top:-2px}
+#rwHomePill .hp-t{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#12212f}
+body:not(.lightmap) #rwHomePill{background:rgba(12,17,23,.9);border-color:rgba(255,255,255,.16)}
+body:not(.lightmap) #rwHomePill .hp-t{color:#e8eff5}
+
+#rwLocChip{position:fixed;top:8px;left:96px;z-index:640;height:40px;display:none;
+  align-items:center;gap:7px;padding:0 13px;border-radius:20px;border:1px solid rgba(18,33,47,.14);
+  background:rgba(250,248,243,.94);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  box-shadow:0 2px 12px rgba(18,33,47,.16);cursor:pointer;max-width:calc(100vw - 110px)}
+#rwLocChip .lc-pin{width:9px;height:9px;border-radius:50%;background:#c0362a;flex:none;
+  box-shadow:0 0 0 3px rgba(192,54,42,.18)}
+#rwLocChip .lc-t{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.05em;color:#12212f;
+  text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#rwLocChip .lc-ch{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;color:#0b7488;
+  text-transform:uppercase;flex:none}
+body:not(.lightmap) #rwLocChip{background:rgba(12,17,23,.9);border-color:rgba(255,255,255,.16)}
+body:not(.lightmap) #rwLocChip .lc-t{color:#e8eff5}
+
+@media(max-width:900px){
+  body:has(#home.gone):not(:has(#rwPanel.on)) #rwHomePill{display:inline-flex}
+  body.rw-haszip:has(#home.gone):not(:has(#rwPanel.on)) #rwLocChip{display:inline-flex}
+  body.rw-haszip #topsearch{display:none!important}
+  /* one exit: the rail square and the brand dot stand down */
+  #rail .rw-exit{display:none!important}
+  #top .brand{display:none!important}
+  /* the top form, when it does show, sits clear of the Home pill */
+  #topsearch{margin-left:88px!important}
+  /* layers panel: right edge, out of the reading path */
+  .legend{top:58px!important;right:10px!important;left:auto!important;bottom:auto!important}
+}
+@media(min-width:901px){#rwHomePill,#rwLocChip{display:none!important}}
+
+/* the basemap row inside the layers panel (mobile only) */
+#lgBase{display:none;align-items:center;gap:5px;margin-top:9px;padding-top:9px;border-top:1px solid rgba(18,33,47,.12)}
+@media(max-width:900px){.legend:not(.lgmini) #lgBase{display:flex}}
+#lgBase .lgb-l{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#75828e;margin-right:2px}
+#lgBase .lgb-b{font-family:var(--mono);font-size:9px;letter-spacing:.04em;padding:5px 8px;border-radius:6px;
+  border:1px solid rgba(18,33,47,.16);background:transparent;color:#3a4a58;cursor:pointer}
+#lgBase .lgb-b.on{background:#0b7488;border-color:#0b7488;color:#fff}
+body:not(.lightmap) #lgBase{border-top-color:rgba(255,255,255,.12)}
+body:not(.lightmap) #lgBase .lgb-b{border-color:rgba(255,255,255,.2);color:#cbd9e4}
+
+/* hints that fade after their first 7 seconds */
+.rw-sleep{opacity:0!important;pointer-events:none!important;transition:opacity .8s!important}
+
+/* every touch acknowledged */
+.rw-tapring{position:fixed;z-index:598;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;
+  border:2px solid rgba(11,116,136,.55);pointer-events:none;animation:rwTap .48s ease-out forwards}
+@keyframes rwTap{from{transform:scale(.4);opacity:.9}to{transform:scale(1.5);opacity:0}}
+@media(prefers-reduced-motion:reduce){.rw-tapring{display:none}}
+
+/* the you-are-here label never clips mid-word */
+.rw-you b{max-width:44vw;overflow:hidden;text-overflow:ellipsis}
+</style>
+
+<script id="rwWayfind">
+/* WAYFINDING - one labeled way home, a top bar that says where you are,
+   a layers panel that yields to the map, and a map that acknowledges touch. */
+(function(){
+ function mob(){return !!(window.matchMedia&&window.matchMedia('(max-width:900px)').matches);}
+ function ready(fn){if(document.readyState!=='loading')fn();else document.addEventListener('DOMContentLoaded',fn);}
+ ready(function(){
+  /* ---- the Home pill ---- */
+  var hp=document.createElement('button');
+  hp.id='rwHomePill'; hp.type='button'; hp.setAttribute('aria-label','Back to the home page');
+  hp.innerHTML='<span class="hp-ch">&lsaquo;</span><span class="hp-t">Home</span>';
+  hp.onclick=function(){try{rwGoHome();}catch(e){}};
+  document.body.appendChild(hp);
+
+  /* ---- the location chip ---- */
+  var lc=document.createElement('button');
+  lc.id='rwLocChip'; lc.type='button'; lc.setAttribute('aria-label','Your ZIP - tap to change');
+  document.body.appendChild(lc);
+  function chipLabel(){
+   var z=(typeof STATE!=='undefined'&&STATE&&STATE.zip)?STATE.zip:(window.__rwZip||null);
+   if(!z)return null;
+   var nm=(typeof Z2P!=='undefined'&&Z2P[z])?Z2P[z]:((typeof Z2PK!=='undefined'&&Z2PK[z])?Z2PK[z]:'');
+   return {z:z,nm:nm};
+  }
+  window.rwSyncChip=function(){
+   if(!mob()){document.body.classList.remove('rw-haszip');return;}
+   var c=chipLabel();
+   if(c){lc.innerHTML='<span class="lc-pin"></span><span class="lc-t">'+(c.nm?c.nm+' &middot; ':'')+c.z+'</span><span class="lc-ch">Change</span>';
+    document.body.classList.add('rw-haszip');}
+   else{document.body.classList.remove('rw-haszip');}
+  };
+  lc.onclick=function(){
+   document.body.classList.remove('rw-haszip');
+   try{var i=document.getElementById('zipTop');if(i){i.value='';setTimeout(function(){i.focus();},60);}}catch(e){}
+  };
+  /* a new ZIP submitted from the top bar re-pins the chip */
+  var _sz=window.submitZip;
+  if(typeof _sz==='function'){window.submitZip=function(ev,src){var r=_sz.apply(this,arguments);
+   setTimeout(function(){try{rwSyncChip();}catch(e){}},400); return r;};}
+
+  /* ---- map entry: sync the chip, sleep the hints after 7s ---- */
+  var _dh=window.dismissHome;
+  if(typeof _dh==='function'){window.dismissHome=function(){
+   var wasGone=false;try{wasGone=!!(window.STATE&&STATE.homeGone);}catch(e){}
+   var r=_dh.apply(this,arguments);
+   if(!wasGone){
+    try{rwSyncChip();}catch(e){}
+    if(mob()){
+     try{
+      var seen=false;try{seen=sessionStorage.getItem('rwHintSeen')==='1';}catch(e){}
+      var zh=document.getElementById('zoomhint'),fc=document.getElementById('flowcap');
+      if(seen){if(zh)zh.classList.add('rw-sleep');if(fc)fc.classList.add('rw-sleep');}
+      else{setTimeout(function(){
+       if(zh)zh.classList.add('rw-sleep');if(fc)fc.classList.add('rw-sleep');
+       try{sessionStorage.setItem('rwHintSeen','1');}catch(e){}
+      },7000);}
+     }catch(e){}
+    }
+   }
+   return r;};}
+
+  /* ---- layers: close on map touch; basemap row lives inside the panel ---- */
+  var lg=document.getElementById('legend');
+  var mp=document.getElementById('map');
+  if(lg&&mp){
+   mp.addEventListener('pointerdown',function(){
+    if(mob()&&!lg.classList.contains('lgmini'))lg.classList.add('lgmini');
+   },{passive:true});
+   var br=document.createElement('div');
+   br.id='lgBase';
+   br.innerHTML='<span class="lgb-l">Basemap</span>'+
+    ['light','satellite','dark'].map(function(b){
+     return '<button type="button" class="lgb-b" data-b="'+b+'">'+b.charAt(0).toUpperCase()+b.slice(1)+'</button>';}).join('');
+   lg.appendChild(br);
+   br.addEventListener('click',function(e){
+    var b=e.target&&e.target.getAttribute&&e.target.getAttribute('data-b');
+    if(!b)return; e.stopPropagation();
+    try{setBase(b);}catch(_){ }
+    br.querySelectorAll('.lgb-b').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-b')===b);});
+   });
+   try{var cur=document.body.classList.contains('darkmap')?'dark':(document.body.classList.contains('satmap')?'satellite':'light');
+    br.querySelectorAll('.lgb-b').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-b')===cur);});}catch(e){}
+  }
+
+  /* ---- every touch on the map is acknowledged ---- */
+  if(mp){
+   mp.addEventListener('touchstart',function(e){
+    if(!mob())return;
+    try{
+     var t=e.touches&&e.touches[0]; if(!t)return;
+     var r=document.createElement('div'); r.className='rw-tapring';
+     r.style.left=t.clientX+'px'; r.style.top=t.clientY+'px';
+     document.body.appendChild(r);
+     setTimeout(function(){try{r.remove();}catch(_){}},480);
+    }catch(_){}
+   },{passive:true});
+  }
+ });
+}());
+</script>
+<style id="rwSheetCSS">
+@media(max-width:900px){
+  /* three detents; height animates unless a finger is on it */
+  #inspect{transition:transform .5s cubic-bezier(.2,.8,.2,1),height .32s cubic-bezier(.2,.8,.2,1)!important}
+  #inspect.rwdrag{transition:transform .5s cubic-bezier(.2,.8,.2,1)!important}
+  #inspect.rwhalf{height:45vh!important;max-height:45vh!important;padding-bottom:0!important}
+  #inspect.on:not(.rwpeek):not(.rwhalf){height:84vh!important;max-height:84vh!important}
+  /* the peek bar is the story's header, not a label about the UI */
+  #iPeek{height:auto!important;min-height:64px;display:flex!important;align-items:center;gap:2px;
+    padding:10px 6px 12px!important;text-transform:none!important;letter-spacing:0!important}
+  .ipk-grab{position:absolute;top:6px;left:50%;margin-left:-20px;width:40px;height:4px;border-radius:2px;
+    background:rgba(18,33,47,.25)}
+  body:not(.lightmap) .ipk-grab{background:rgba(255,255,255,.28)}
+  .ipk-mid{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:6px}
+  .ipk-kick{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:#c0362a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  body:not(.lightmap) .ipk-kick{color:#ff8b80}
+  .ipk-title{font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:-.01em;color:#12212f;
+    line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  body:not(.lightmap) .ipk-title{color:#e8eff5}
+  .ipk-nav{flex:none;width:44px;height:44px;border:none;background:transparent;color:#0b7488;
+    font-size:26px;line-height:1;border-radius:50%;padding:0;margin-top:4px}
+  body:not(.lightmap) .ipk-nav{color:#5ce0f4}
+  .ipk-nav:active{transform:scale(.9);background:rgba(11,116,136,.10)}
+  /* in peek, the bar IS the sheet; the old duplicate header hides */
+  #inspect.rwpeek .i-head{display:none!important}
+  #inspect.rwpeek{height:auto!important;max-height:none!important;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))!important}
+  #inspect:not(.rwpeek) .i-head{padding-top:64px!important}
+  /* the X stays reachable above the chevron */
+  #inspect .i-close{z-index:8}
+  /* the receive flash - cause, meet effect */
+  #inspect.rw-recv{box-shadow:0 -2px 0 0 #0b7488,0 -14px 40px -18px rgba(18,33,47,.35)!important}
+  #inspect.rw-recv .ipk-mid{animation:rwRecv .32s ease-out}
+  /* while a finger holds the sheet, --dragh wins over every detent height */
+  #inspect.rwdrag.rwdrag.rwdrag{height:var(--dragh,45vh)!important;max-height:none!important}
+  @keyframes rwRecv{from{transform:translateY(7px);opacity:.4}to{transform:none;opacity:1}}
+  @media(prefers-reduced-motion:reduce){#inspect.rw-recv .ipk-mid{animation:none}}
+  /* the timeline link inside the dossier */
+  #rwTlLink{display:block;margin:20px 0 6px;padding:12px 14px;width:100%;text-align:left;
+    font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:#0b7488;background:transparent;border:1px solid rgba(11,116,136,.35);border-radius:9px}
+  body:not(.lightmap) #rwTlLink{color:#5ce0f4;border-color:rgba(92,224,244,.35)}
+}
+</style>
+
+<script id="rwSheet">
+/* THE BOTTOM SHEET - peek / half / full, dragged or tapped, always connected
+   to the rail that drives it. Mobile only; desktop keeps its side panel. */
+(function(){
+ function mob(){return !!(window.matchMedia&&window.matchMedia('(max-width:900px)').matches);}
+ function ready(fn){if(document.readyState!=='loading')fn();else document.addEventListener('DOMContentLoaded',fn);}
+ ready(function(){
+  var insp=document.getElementById('inspect');
+  var old=document.getElementById('iPeek');
+  if(!insp||!old)return;
+
+  /* rebuild the peek bar: story first, chevrons at the ends */
+  var pk=old.cloneNode(false);          /* drops the old toggle listener */
+  pk.innerHTML=
+   '<span class="ipk-grab" aria-hidden="true"></span>'+
+   '<button type="button" class="ipk-nav ipk-prev" aria-label="Previous question">&lsaquo;</button>'+
+   '<span class="ipk-mid"><span class="ipk-kick" id="ipkKick"></span><span class="ipk-title" id="ipkTitle"></span></span>'+
+   '<button type="button" class="ipk-nav ipk-next" aria-label="Next question">&rsaquo;</button>';
+  old.parentNode.replaceChild(pk,old);
+
+  var ORDER=['water','source','movement','exposure','health','research'];
+  function det(){return insp.classList.contains('rwpeek')?'peek':(insp.classList.contains('rwhalf')?'half':'full');}
+  function setDet(d){
+   try{insp.style.removeProperty('--dragh');}catch(e){}
+   insp.classList.remove('rwpeek','rwhalf');
+   if(d==='peek')insp.classList.add('rwpeek');
+   else if(d==='half')insp.classList.add('rwhalf');
+   insp.style.height='';
+   pk.setAttribute('aria-expanded',d==='peek'?'false':'true');
+   if(d!=='peek'){try{var b=document.getElementById('iBody');if(b)b.scrollTop=0;}catch(e){}}
+  }
+  window.rwSheetSync=function(){
+   try{
+    var st=(window.STATE&&STATE.stage)?STATE.stage:null;
+    var i=ORDER.indexOf(st);
+    var k=document.getElementById('ipkKick'),t=document.getElementById('ipkTitle');
+    if(i>=0&&typeof STAGES!=='undefined'&&STAGES[st]){
+     k.textContent='Step '+(i+1)+' of 6 · '+STAGES[st].q;
+    }else{
+     var ik=document.getElementById('iKick');
+     k.textContent=ik?ik.textContent:'';
+    }
+    var it=document.getElementById('iTitle');
+    t.textContent=it?it.textContent:'';
+    pk.querySelector('.ipk-prev').style.visibility=(i>0)?'visible':'hidden';
+    pk.querySelector('.ipk-next').style.visibility=(i>=0&&i<ORDER.length-1)?'visible':'hidden';
+   }catch(e){}
+  };
+  function step(dir){
+   var st=(window.STATE&&STATE.stage)?STATE.stage:null;
+   var i=ORDER.indexOf(st); if(i<0)return;
+   var n=i+dir; if(n<0||n>=ORDER.length)return;
+   try{selectStage(ORDER[n]);}catch(e){}
+  }
+  pk.querySelector('.ipk-prev').addEventListener('click',function(e){e.stopPropagation();step(-1);});
+  pk.querySelector('.ipk-next').addEventListener('click',function(e){e.stopPropagation();step(1);});
+  /* tapping the bar itself steps the sheet up: peek -> half -> full -> half */
+  pk.addEventListener('click',function(){
+   if(insp.__squelch)return;   /* a drag is not a tap */
+   var d=det(); setDet(d==='peek'?'half':(d==='half'?'full':'half'));
+  });
+
+  /* ---- drag the sheet by its bar ---- */
+  var drag=null;
+  pk.addEventListener('pointerdown',function(e){
+   if(!mob())return;
+   drag={y:e.clientY,h:insp.getBoundingClientRect().height,moved:false};
+   insp.classList.add('rwdrag');
+   try{pk.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  pk.addEventListener('pointermove',function(e){
+   if(!drag)return;
+   var dy=drag.y-e.clientY;
+   if(Math.abs(dy)>6)drag.moved=true;
+   var h=Math.max(64,Math.min(window.innerHeight*.88,drag.h+dy));
+   insp.style.setProperty('--dragh',h+'px');
+   insp.classList.remove('rwpeek');  /* content shows while dragging up */
+  });
+  function endDrag(e){
+   if(!drag)return;
+   var moved=drag.moved; drag=null;
+   /* measure BEFORE dropping the drag class - removing it snaps the height back */
+   var h=insp.getBoundingClientRect().height, vh=window.innerHeight;
+   insp.classList.remove('rwdrag');
+   if(!moved){try{insp.style.removeProperty('--dragh');}catch(e){}insp.classList.toggle('rwpeek',det()==='peek');return;} /* click handler owns taps */
+   var d=(h<vh*.26)?'peek':(h<vh*.62)?'half':'full';
+   setDet(d);
+   if(moved){insp.__squelch=true;setTimeout(function(){insp.__squelch=false;},80);}
+  }
+  pk.addEventListener('pointerup',endDrag);
+  pk.addEventListener('pointercancel',endDrag);
+  /* a drag must not also fire the tap-cycle */
+  pk.addEventListener('click',function(e){if(insp.__squelch){e.stopImmediatePropagation();}},true);
+
+  /* ---- openInspect / closeInspect: detent-aware ---- */
+  var _open=window.openInspect;
+  window.openInspect=function(){
+   var r=(typeof _open==='function')?_open.apply(this,arguments):undefined;
+   if(mob()){
+    if(window.__rwSheetFirst){window.__rwSheetFirst=false;setDet('peek');}
+    else if(det()==='peek'&&window.__rwSheetRaise){setDet('half');}
+    window.__rwSheetRaise=false;
+   }
+   window.rwSheetSync();
+   return r;
+  };
+  var _close=window.closeInspect;
+  window.closeInspect=function(){
+   if(mob()&&insp.classList.contains('on')){setDet('peek');window.rwSheetSync();return;}
+   return (typeof _close==='function')?_close.apply(this,arguments):undefined;
+  };
+
+  /* first arrival on the map opens quiet; user actions open at half */
+  var _dh=window.dismissHome;
+  if(typeof _dh==='function'){window.dismissHome=function(){
+   var wasGone=false;try{wasGone=!!(window.STATE&&STATE.homeGone);}catch(e){}
+   if(!wasGone)window.__rwSheetFirst=true;
+   return _dh.apply(this,arguments);};}
+
+  /* ---- the rail drives the sheet, visibly ---- */
+  var _ss=window.selectStage;
+  if(typeof _ss==='function'){window.selectStage=function(stage){
+   var r=_ss.apply(this,arguments);
+   if(mob()){
+    window.__rwSheetRaise=true;
+    if(insp.classList.contains('on')){
+     if(det()==='peek')setDet('half');
+     insp.classList.remove('rw-recv'); void insp.offsetWidth; insp.classList.add('rw-recv');
+     setTimeout(function(){insp.classList.remove('rw-recv');},600);
+    }
+    /* the timeline, where it is relevant */
+    setTimeout(function(){
+     try{
+      var b=document.getElementById('iBody'); if(!b)return;
+      var ex=document.getElementById('rwTlLink'); if(ex)ex.remove();
+      if(stage==='source'||stage==='movement'){
+       var d=document.createElement('button'); d.id='rwTlLink'; d.type='button';
+       d.innerHTML='See how it spread, 1970 &rarr; today &rsaquo;';
+       d.onclick=function(){try{setDet('peek');toggleTimeline();var bt=document.getElementById('bottom');if(bt){bt.classList.remove('rw-sleep');}var zh=document.getElementById('zoomhint');if(zh)zh.classList.add('rw-sleep');}catch(e){}};
+       b.appendChild(d);
+      }
+     }catch(e){}
+    },350);
+   }
+   window.rwSheetSync();
+   return r;};}
+
+  window.rwSheetSync();
+ });
+}());
+</script>
+<style id="rwPaperCSS2">
+@media(max-width:900px){
+  /* ---- peek-bar geometry: in-flow when peeking, slim strip when open ---- */
+  #inspect.rwpeek #iPeek{position:relative!important}
+  #inspect::before{display:none!important}
+  #inspect.rwpeek .i-close{display:none!important}
+  #inspect:not(.rwpeek) #iPeek{min-height:0;padding:6px 96px 6px 52px!important}
+  #inspect:not(.rwpeek) #iPeek .ipk-title{display:none}
+  #inspect:not(.rwpeek) #iPeek .ipk-kick{font-size:8.5px}
+  #inspect:not(.rwpeek) #iPeek .ipk-nav{width:40px;height:40px;margin-top:0}
+  #inspect:not(.rwpeek) .i-head{padding-top:44px!important}
+  /* the rail sits above the map's own panes */
+  #rail{z-index:660!important}
+  /* the scale bar and attribution, in daylight */
+  body.lightmap .leaflet-control-scale-line{background:rgba(250,248,243,.85)!important;color:#3a4a58!important;
+    border-color:rgba(18,33,47,.3)!important;text-shadow:none!important}
+
+  /* ---- the last dark-theme holdouts inside the paper dossier ---- */
+  body.lightmap #inspect .i-tabs{background:transparent!important}
+  body.lightmap #inspect .rs-feat{background:#fff!important;border-color:rgba(18,33,47,.12)!important}
+  body.lightmap #inspect .rs-feat *:not([style*="color"]){color:#12212f}
+  body.lightmap #inspect .rs-do2{background:#eef8f1!important;border-color:#bfe4cc!important;color:#1d3a2a!important}
+  body.lightmap #inspect .rw-more-t{background:#fff!important;border-color:rgba(18,33,47,.16)!important;color:#12212f!important}
+  body.lightmap #inspect [style*="color:#fff"]{color:#12212f!important}
+  body.lightmap #inspect [style*="#cdd8e3"]{color:#4c5866!important}
+  body.lightmap #inspect .abe-d{color:#4c5866!important}
+  body.lightmap #inspect .abe-why{color:#1c6e46!important}
+  body.lightmap #inspect .abe-ev{color:#5a6b78!important}
+  body.lightmap #inspect .wc-nm{color:#12212f!important}
+  body.lightmap #inspect .ic-interp,body.lightmap #inspect .up-item{color:#4c5866!important}
+  body.lightmap #inspect .rs-feat .rs-feat-n{color:#12212f!important}
+  body.lightmap #inspect b:not([style]),body.lightmap #inspect strong:not([style]){color:inherit}
 }
 </style>
 </body>
