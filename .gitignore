@@ -1,0 +1,5 @@
+# Local build & test scratch — not part of the deployed site
+_*.html
+adv_out.html
+/*.png
+vendor/
