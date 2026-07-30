@@ -1075,6 +1075,218 @@ body,.wsec,.wsec p,.wsec div,.mono,[class*="mono"],code,table,.ty-num,.tg-num .n
 .led-row .src a{font-family:var(--mono);font-size:11.5px;color:#0b7488;text-decoration:none;border-bottom:1px solid rgba(12,126,147,.3);display:inline-block;margin:2px 0}
 @media(max-width:640px){.drop-grid{grid-template-columns:1fr}.led-row{grid-template-columns:1fr}.led-row .src{text-align:left}}
 </style>
+<style id="mw2css">
+
+
+.mw2{
+  --bg:#fdfdfb; --page:#f1efe9; --ink:#15181c; --brick:#c0362a; --teal:#5e8790;
+  --gray:#8f8a80; --hair:#ece8df; --soft:#f6f4ef;
+}
+.mw2 *{margin:0;padding:0;box-sizing:border-box}
+.mw2{background:var(--page);font-family:'Inter',system-ui,sans-serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased;padding:48px 20px 80px;}
+.mw2 .card{max-width:760px;margin:0 auto;background:var(--bg);border:1px solid var(--hair);
+  border-radius:20px;box-shadow:0 30px 80px rgba(20,20,18,.08);overflow:hidden}
+.mw2 .pad{padding:44px 48px}
+.mw2 .sec{padding:38px 48px;border-top:1px solid var(--hair)}
+.mw2 /* type helpers */
+.mono{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;}
+.mw2 .kick{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brick);font-size:14px}
+.mw2 .tealkick{color:var(--teal)}
+.mw2 .serif{font-family:'Fraunces';}
+.mw2 .mut{color:var(--gray)}
+.mw2 .brick{color:var(--brick)}
+.mw2 a{color:var(--teal);text-decoration:none;font-weight:600}
+.mw2 a:hover{text-decoration:underline}
+.mw2 /* header */
+.hd{display:flex;justify-content:space-between;align-items:baseline;padding:26px 60px;border-bottom:1px solid var(--hair)}
+.mw2 .brand{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:15px}
+.mw2 .hk{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-size:15px;color:var(--teal)}
+.mw2 /* score */
+.scorerow{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.mw2 .badge{background:var(--brick);color:#fff;font-family:'Fraunces';font-weight:600;width:120px;height:120px;
+  border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:88px;line-height:1;flex:none}
+.mw2 .gnum{font-family:'Fraunces';font-weight:500;font-size:150px;line-height:.8;letter-spacing:-.01em}
+.mw2 .gtail{display:flex;flex-direction:column;gap:4px}
+.mw2 .slash{font-family:'Fraunces';font-size:38px;color:var(--gray)}
+.mw2 .failing{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);font-size:19px}
+.mw2 .rcluster{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.mw2 .pill{background:var(--brick);color:#fff;border-radius:999px;font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;font-size:16px;padding:11px 20px}
+.mw2 .loc{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;text-align:right;font-size:19px;line-height:1.4}
+.mw2 .loc .zip{font-weight:400;color:var(--gray);letter-spacing:.14em;font-size:16px}
+.mw2 .stamp{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);font-size:13.5px;margin-top:26px}
+.mw2 .lede{font-family:'Fraunces';font-weight:400;font-size:34px;line-height:1.32;margin-top:30px}
+.mw2 .lede b{font-weight:600;color:var(--brick)}
+.mw2 /* why */
+.h2{font-family:'Fraunces';font-weight:600;font-size:28px;margin-bottom:18px}
+.mw2 .megawrap{display:flex;align-items:flex-end;gap:26px;margin:6px 0 12px}
+.mw2 .mega{font-family:'Fraunces';font-weight:600;color:var(--brick);font-size:104px;line-height:.84;letter-spacing:-.01em;white-space:nowrap}
+.mw2 .megawrap{flex-wrap:wrap}
+.mw2 .megacap{font-size:22px;line-height:1.28;padding-bottom:14px}
+.mw2 .subline{color:var(--gray);font-size:18px;margin-bottom:34px}
+.mw2 .listlab{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-size:14px;margin-bottom:6px}
+.mw2 .hlist{display:grid;grid-template-columns:1fr 1fr;column-gap:44px}
+.mw2 .hitem{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--hair);padding:15px 0;font-size:20px}
+.mw2 .hitem .dot{color:var(--brick);font-size:9px;transform:translateY(-3px)}
+.mw2 .quote{font-family:'Fraunces';font-style:italic;font-size:22px;line-height:1.36;border-left:3px solid var(--brick);padding-left:24px;margin:34px 0}
+.mw2 .note{font-size:20px;line-height:1.5}
+.mw2 .note b{font-weight:600}
+.mw2 /* proof stat rows */
+.statrow{display:flex;align-items:baseline;gap:34px;margin-bottom:10px}
+.mw2 .statnum{font-family:'Fraunces';font-weight:600;color:var(--brick);font-size:82px;line-height:.86;white-space:nowrap;flex:none;width:210px}
+.mw2 .statcap{font-size:23px;line-height:1.3}
+.mw2 .statcap b{color:var(--brick);font-weight:600}
+.mw2 .cite{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:var(--gray);letter-spacing:.04em}
+.mw2 .divider{height:1px;background:var(--hair);margin:30px 0}
+.mw2 .synth{font-family:'Fraunces';font-size:26px;line-height:1.34;margin-top:8px}
+.mw2 .synth b{font-weight:600}
+.mw2 /* three hats */
+.hatrow{display:flex;align-items:baseline;gap:30px;padding:22px 0;border-bottom:1px solid var(--hair)}
+.mw2 .hatrow:last-of-type{border-bottom:none}
+.mw2 .hatverb{font-family:'Fraunces';font-weight:600;color:var(--brick);font-size:52px;width:190px;flex:none;line-height:1}
+.mw2 .hatdesc{font-size:22px;line-height:1.3}
+.mw2 .hatdesc b{font-weight:600;color:var(--brick)}
+.mw2 /* deleted safe */
+.bighook{font-family:'Fraunces';font-weight:400;font-size:44px;line-height:1.2}
+.mw2 .bighook b{font-weight:600;color:var(--brick)}
+.mw2 /* fix */
+.opt{font-size:22px;line-height:1.35;margin-bottom:16px}
+.mw2 .opt b{color:var(--brick);font-weight:600}
+.mw2 /* actions */
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.mw2 .btn{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:14px;
+  padding:15px 22px;border-radius:10px;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.mw2 .btn.solid{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mw2 .btn.brick{background:var(--brick);color:#fff;border-color:var(--brick)}
+.mw2 .btn .a{color:var(--brick)}
+.mw2 .btn.solid .a, .mw2 .btn.brick .a{color:#fff}
+.mw2 .foot{padding:30px 60px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.mw2 .url{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:500;letter-spacing:.1em;color:var(--gray);font-size:15px}
+.mw2 .src{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:400;color:var(--gray);font-size:13px;letter-spacing:.04em}
+
+@media (max-width:640px){
+.mw2{padding:16px 10px 48px}
+.mw2 .card{border-radius:14px}
+.mw2 .pad, .mw2 .sec{padding:34px 24px}
+.mw2 .hd, .mw2 .foot{padding-left:24px;padding-right:24px}
+.mw2 .brand, .mw2 .hk{font-size:12px;letter-spacing:.14em}
+.mw2 .badge{width:82px;height:82px;font-size:60px;border-radius:16px}
+.mw2 .gnum{font-size:96px}
+.mw2 .slash{font-size:26px}
+.mw2 .failing{font-size:15px}
+.mw2 .rcluster{margin-left:0;align-items:flex-start;width:100%}
+.mw2 .pill{font-size:13px;padding:9px 15px}
+.mw2 .loc{text-align:left;font-size:16px}
+.mw2 .lede{font-size:26px}
+.mw2 .mega{font-size:72px}
+.mw2 .megawrap{gap:18px}
+.mw2 .megacap{font-size:19px}
+.mw2 .hlist{grid-template-columns:1fr;column-gap:0}
+.mw2 .statnum{font-size:56px;width:130px}
+.mw2 .statcap{font-size:19px}
+.mw2 .statrow{gap:18px}
+.mw2 .hatverb{font-size:38px;width:110px}
+.mw2 .hatdesc{font-size:19px}
+.mw2 .bighook{font-size:30px}
+.mw2 .h2{font-size:24px}
+.mw2 .synth{font-size:21px}
+.mw2 .quote{font-size:19px}
+}
+.mw2 /* collapsible What-is-PFAS */
+details.wp{border:none}
+.mw2 details.wp summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-size:14px}
+.mw2 details.wp summary::-webkit-details-marker{display:none}
+.mw2 details.wp summary .pm{font-family:'Fraunces';color:var(--brick);font-size:30px;line-height:1;font-weight:400;transition:transform .2s}
+.mw2 details.wp[open] summary .pm{transform:rotate(45deg)}
+.mw2 details.wp .wpbody{margin-top:22px;font-size:20px;line-height:1.55}
+.mw2 details.wp .wpbody b{font-weight:600}
+.mw2 /* PFAS bar chart */
+.chart{margin-top:30px}
+.mw2 .crow{display:grid;grid-template-columns:120px 1fr 76px;align-items:center;gap:14px;margin:11px 0}
+.mw2 .ct{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.04em;color:var(--ink)}
+.mw2 .cbar{height:16px;background:#efece5;border-radius:4px;overflow:hidden}
+.mw2 .cbar i{display:block;height:100%;background:var(--brick);border-radius:4px}
+.mw2 .cbar i.lim{background:var(--teal)}
+.mw2 .cbar i.hair{background:transparent;border-left:2px solid var(--ink)}
+.mw2 .cv{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-size:15px;text-align:right;color:var(--ink)}
+.mw2 .cv.mut{color:var(--gray);font-weight:400}
+.mw2 /* action protocol / demand tools */
+.step{display:grid;grid-template-columns:30px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--hair);font-size:19px;line-height:1.4}
+.mw2 .step:last-of-type{border-bottom:none}
+.mw2 .step .n{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:700;color:var(--brick);font-size:16px}
+.mw2 .step b{font-weight:600}
+.mw2 .step .lnk{display:inline-block;margin-top:6px}
+.mw2 .substep{margin:9px 0 0;padding-left:13px;border-left:2px solid rgba(192,54,42,.3);font-size:17px;line-height:1.42}
+.mw2 .jumpfix{margin-top:22px;font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:13.5px;letter-spacing:.03em}
+.mw2 .jumpfix a{color:var(--teal);font-weight:600}
+.mw2 .protolink{margin-top:15px;font-size:17px;line-height:1.42}
+.mw2 .protolink a{color:var(--teal);font-weight:600}
+.mw2 .protolink b{font-weight:700}
+.mw2 .substep b{font-weight:600}
+.mw2 .demand{background:var(--soft);border:1px solid var(--hair);border-radius:12px;padding:18px 20px;margin-top:14px}
+.mw2 .demand p{font-size:16px;line-height:1.5;color:var(--ink);margin-bottom:14px}
+.mw2 .dbtns{display:flex;flex-wrap:wrap;gap:10px}
+.mw2 .dbtn{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13px;
+  padding:12px 16px;border-radius:9px;border:1px solid var(--ink);color:var(--ink);cursor:pointer;text-decoration:none}
+.mw2 .dbtn.brick{background:var(--brick);color:#fff;border-color:var(--brick)}
+.mw2 .dnote{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;color:var(--gray);margin-top:12px;line-height:1.5}
+.mw2 /* science accordion */
+details.acc{border-top:1px solid var(--hair)}
+.mw2 details.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 0;font-family:'Fraunces';font-weight:500;font-size:20px;color:var(--ink)}
+.mw2 details.acc summary::-webkit-details-marker{display:none}
+.mw2 details.acc summary .pm{font-family:'Fraunces';color:var(--brick);font-size:26px;line-height:1;transition:transform .2s;flex:none}
+.mw2 details.acc[open] summary .pm{transform:rotate(45deg)}
+.mw2 details.acc .accb{padding:2px 0 22px;font-size:16.5px;line-height:1.6;color:var(--ink)}
+.mw2 details.acc .accb b{font-weight:600}
+.mw2 details.acc .accb ul{margin:10px 0 10px 4px;list-style:none}
+.mw2 details.acc .accb ul li{padding:4px 0 4px 18px;position:relative}
+.mw2 details.acc .accb ul li:before{content:'—';position:absolute;left:0;color:var(--brick)}
+.mw2 .sublab{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-size:12px;margin:14px 0 4px}
+.mw2 /* EPA authoritative harm list */
+.epa-lab{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);font-size:13px;margin-bottom:10px;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.mw2 .epa-lab .tag{font-size:11px;color:#fff;background:var(--teal);border-radius:5px;padding:3px 9px;letter-spacing:.12em}
+.mw2 .epa-li{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--hair);padding:13px 0;font-size:19px;line-height:1.38}
+.mw2 .epa-li:last-of-type{border-bottom:none}
+.mw2 .epa-li .dot{color:var(--brick);font-size:9px;transform:translateY(-3px);flex:none}
+.mw2 .epa-li b{font-weight:600}
+.mw2 .epa-note{font-size:16px;line-height:1.55;color:var(--ink);margin-top:18px;background:var(--soft);border-left:3px solid var(--teal);padding:14px 18px;border-radius:0 8px 8px 0}
+.mw2 .epa-note b{font-weight:600}
+.mw2 .epa-cite{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;color:var(--gray);margin-top:13px;letter-spacing:.04em}
+@media (max-width:640px){
+.mw2 .epa-li{font-size:16.5px}
+.mw2 .epa-note{font-size:15px} }
+.mw2 /* sources */
+.srcwrap{font-size:15px;line-height:1.7;color:var(--gray)}
+.mw2 .srcwrap a{color:var(--teal);font-weight:500}
+.mw2 .byline{font-family:'Fraunces';font-style:italic;font-size:18px;color:var(--ink);margin-top:18px;line-height:1.4}
+
+@media (max-width:640px){
+.mw2 .crow{grid-template-columns:96px 1fr 60px;gap:10px}
+.mw2 .ct{font-size:11.5px}
+.mw2 .cv{font-size:13px}
+.mw2 .step{font-size:16px}
+.mw2 details.acc summary{font-size:17px}
+.mw2 .demand p{font-size:15px}
+}
+.mw2 .rs-band{display:inline-block;background:var(--brick);color:#fff;border-radius:999px;font-family:var(--mono,'JetBrains Mono');font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:16px;padding:11px 20px}
+.mw2 .rs-band.b-amb{background:#a5620f}
+.mw2 .rs-band.b-grn{background:#1c6e46}
+.mw2 .rs-place{font-family:var(--mono,'JetBrains Mono');font-weight:600;font-size:19px;display:block}
+.mw2 .rs-zipsm{font-family:var(--mono,'JetBrains Mono');font-weight:400;color:var(--gray);letter-spacing:.14em;font-size:16px}
+.mw2 .rs-src-badge{font-family:var(--mono,'JetBrains Mono');font-weight:700;font-size:11px;letter-spacing:.1em;background:var(--teal);color:#fff;border-radius:5px;padding:2px 8px;margin-right:6px}
+.mw2 .rs-src-badge.amb{background:#a5620f}
+.mw2 .rs-src-ind{display:block;margin-top:10px;color:var(--gray);font-size:14px}
+.mw2 .rs-altlink,.mw2 .rs-alt a{color:var(--teal);font-weight:600;cursor:pointer}
+@media(max-width:640px){.mw2 .rs-band{font-size:13px;padding:9px 15px}.mw2 .rs-place{font-size:16px}}
+.mw2 .cardnav{display:flex;flex-wrap:wrap;gap:9px 22px;justify-content:center;padding:22px 48px 40px;border-top:1px solid var(--hair)}
+.mw2 .cardnav a{font-family:var(--mono,'JetBrains Mono');font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);font-weight:600;cursor:pointer;text-decoration:none}
+.mw2 .cardnav a:hover{text-decoration:underline}
+@media(max-width:640px){.mw2 .cardnav{padding:20px 24px 34px;gap:8px 16px}}
+#wcard{background:none;border:0;box-shadow:none;padding:0;width:auto;max-width:none}
+</style>
 </head>
 <body>
 <div id="baseswitch"><button class="baseb on" data-b="light" onclick="setBase('light')">Light</button><button class="baseb" data-b="satellite" onclick="setBase('satellite')">Satellite</button><button class="baseb" data-b="dark" onclick="setBase('dark')">Dark</button></div>
@@ -1194,60 +1406,179 @@ body,.wsec,.wsec p,.wsec div,.mono,[class*="mono"],code,table,.ty-num,.tg-num .n
 
   <div id="rvCardWrap" style="display:none">
    <div class="wcard" id="wcard">
-    <div class="wc-mast st"><span>Rigano Water Institute</span><span class="wc-tag">Household Water Score</span></div>
-    <div class="rs-top st">
-     <div class="rs-grade st" id="rsGrade">F</div>
-     <div class="rs-num" id="rsNum">34</div>
-     <div class="rs-of">/100</div><div class="rs-word" id="rsWord"></div>
-     <div class="rs-side"><span class="rs-band" id="rsBand">Elevated burden</span><span class="rs-zip" id="rsZip">ZIP 33139</span></div>
+<div class="mw2">
+<div class="card">
+
+  <!-- header -->
+  <div class="hd"><span class="brand">Rigano Water Institute</span><span class="hk">Household Water Score</span></div>
+
+  <!-- SCORE -->
+  <div class="pad">
+    <div class="scorerow">
+      <div class="badge" id="rsGrade">F</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div class="gnum" id="rsNum">21</div>
+        <div class="gtail"><span class="slash">/100</span><span class="failing" id="rsWord">Failing</span></div>
+      </div>
+      <div class="rcluster">
+        <span class="pill" id="rsBand">Severe PFAS Burden</span>
+        <div class="loc" id="rsZip">Miami Beach<br><span class="zip">ZIP 33139</span></div>
+      </div>
     </div>
-    <div class="rs-conf st" id="rsConf">High confidence &middot; lab samples on record &middot; updated July 2026</div><div class="rs-verdict st" id="rsVerdict"></div><div class="rs-health st" id="rsHealth"><div class="rsh-h">Why this matters</div><p class="rsh-thy">Miami-Dade has the <b>2nd-highest thyroid-cancer rate of Florida&rsquo;s 67 counties</b> &mdash; about <b>1.4&times; the U.S. average</b> and still climbing, reaching <b>2.2&ndash;2.8&times;</b> in hotspots like North Bay Village, Doral and Miami Springs. Miami Beach itself runs <b>1.7&times;</b> the national rate. <span class="rsh-cite">Florida Cancer Data System / SCAN360, age-adjusted 2016&ndash;2020.</span></p><div class="rsh-sub">Federal science &mdash; the C8 Science Panel, the EPA and the National Academies &mdash; links long-term PFAS exposure to:</div><ul class="rsh-list"><li>Kidney &amp; testicular cancer</li><li>Thyroid disease</li><li>High cholesterol</li><li>Ulcerative colitis</li><li>Pregnancy high blood pressure &amp; preeclampsia</li><li>Weaker immune &amp; vaccine response</li><li>Low birth weight &amp; developmental effects in children</li></ul><p class="rsh-own">Miami-Dade&rsquo;s own 2025 water report admits PFAS can cause &ldquo;liver, immune, and thyroid effects &hellip; and developmental and thyroid effects during pregnancy and childhood.&rdquo;</p><p class="rsh-kid">There is also an emergent <b>kidney-cancer cluster</b> in the same corridor where the firefighting foam was used, around Miami International Airport &mdash; <a href="#map" onclick="event.preventDefault();try{rwEnterMap()}catch(e){}">see it on the map &rarr;</a></p><div class="rsh-whatis"><div class="rsh-wh-h">What is PFAS?</div><p>PFAS are industrial &ldquo;forever chemicals&rdquo; from the military-grade firefighting foam sprayed at the airport for decades &mdash; they don&rsquo;t break down, and they persist and bioaccumulate in the human body and the environment. <b>PFAS are known to cause cancer.</b> They&rsquo;ve reached the water wells that serve Miami-Dade. In 2020 Miami-Dade sued <b>3M</b> (the manufacturer) over the contamination &mdash; expecting roughly <b>$199&nbsp;million</b>, against a cleanup estimate of up to <b>$3&nbsp;billion</b>.</p></div></div><div class="rs-src st" id="rsSrc"></div><div class="rs-peak st"><span class="rs-peak-l">Share it with a friend</span><span class="rs-peak-b"><a onclick="rwShareAdvisory('wa')">WhatsApp</a><a onclick="rwShareAdvisory('fb')">Facebook</a><a onclick="rwShareAdvisory('more')">Text / more</a><a class="rw-cardbtn" onclick="rwCardShare()">▣ Save image</a></span></div>
-    <div class="wc-label st" id="wcLabel">Total PFAS across every compound your system reports</div>
-    <div class="wc-chart st">
-     <div class="wc-row"><span class="wc-t" id="wcT1">Total PFAS</span><div class="wc-bar"><i id="wcB1"></i></div><span class="wc-v" id="wcV1"></span></div>
-     <div class="wc-row"><span class="wc-t">Federal limit</span><div class="wc-bar"><i id="wcB2" class="lim"></i></div><span class="wc-v">4 ppt</span></div>
-     <div class="wc-row"><span class="wc-t">Safe level</span><div class="wc-bar"><i class="hair"></i></div><span class="wc-v">0 ppt</span></div>
+    <div class="stamp" id="rsConf">Your system has shown up to <b style="color:var(--ink)">423 ppt total PFAS</b></div>
+    <div class="lede" id="rsVerdict">In plain terms — your tap water runs about <b>8× over the federal PFAS limit</b>, and about <b>1,650×</b> the 2022 EPA health advisory. According to the EPA, the only amount considered safe is <b>zero</b>.</div>
+    <div class="chart">
+      <div class="crow"><span class="ct" id="wcT1">Your water</span><div class="cbar"><i id="wcB1" style="width:91%"></i></div><span class="cv" id="wcV1">33 ppt</span></div>
+      <div class="crow"><span class="ct">Federal limit</span><div class="cbar"><i id="wcB2" class="lim" style="width:11%"></i></div><span class="cv mut">4 ppt</span></div>
+      <div class="crow"><span class="ct">Safe level</span><div class="cbar"><i class="hair"></i></div><span class="cv mut">0 ppt</span></div>
     </div>
-    <style id="rsProtoCSS">.wcard .rs-proto{background:#fbfaf7;color:#2a333b;border:1px solid #e6e3db;border-radius:12px;padding:18px 20px;margin:16px 0}.rs-proto-h{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#c0362a;margin-bottom:12px}.rs-proto-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}.rs-proto-list li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;font-size:14.5px;line-height:1.5;color:#2a333b}.rs-proto-list .n{font-family:var(--mono);font-weight:700;color:#c0362a;font-size:14px;line-height:1.55}.rs-proto-list b{color:#15181c}.rs-proto-list a{color:#c0362a;cursor:pointer;text-decoration:none;border-bottom:1px solid rgba(192,54,42,.35)}.rs-proto .rs-opt{margin:8px 0 0;padding-left:11px;border-left:2px solid rgba(192,54,42,.35)}.rs-proto .rs-opt b{color:#15181c}.rs-proto .rs-opt-n{margin-top:8px;font-size:12.5px;color:#5b6570}.rs-proto .rs-share{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:#54636f;margin-top:15px;padding-top:13px;border-top:1px solid #ecede8;line-height:1.5}.rs-proto .rs-share span{color:#54636f;display:block;margin-bottom:7px}.rs-proto .rs-share a{color:#c0362a;font-weight:700;white-space:nowrap;border-bottom:1px solid rgba(192,54,42,.4);margin:0 2px}</style><div class="rs-proto st"><div class="rs-proto-h">Your 99.9% solution</div><ol class="rs-proto-list"><li><span class="n">1</span><div><b>Get your drinking water from a cleaner source &mdash; best option first.</b><div class="rs-opt"><b>1A &middot; Atmospheric water generation &rarr; reverse osmosis (RO)</b> &mdash; the ceiling. It makes water from the air (near-zero PFAS at the source), then a certified RO stage polishes it.</div><div class="rs-opt"><b>1B &middot; Certified anion exchange &rarr; RO</b> (NSF/ANSI 53 &amp; 58) &mdash; the proven two-barrier stack.</div><div class="rs-opt-n">Either way, two barriers in series &mdash; a carbon pitcher alone misses the short-chain PFAS.</div></div></li><li><span class="n">2</span><div><b>Take your advisory.</b> Your one-page Drinking Water Advisory for <span id="rsProtoSys">your system</span> &mdash; hand it to your building, school, or commissioner. <a onclick="rwPrintAdvisory()">Open &middot; view &amp; save as PDF &#9656;</a><div class="rs-share"><span>Send this advisory &darr;</span> <a onclick="rwShareAdvisory('fb')">Facebook</a> &middot; <a onclick="rwShareAdvisory('wa')">WhatsApp</a> &middot; <a onclick="rwShareAdvisory('x')">X</a> &middot; <a onclick="rwShareAdvisory('more')">Text / more&hellip;</a></div><div class="rs-demand"><div class="rs-demand-h">Now make them act &darr;</div><p class="rs-demand-p">The county has this data and issued <b>no public advisory</b>. One tap drafts the email &mdash; you just press send.</p><div class="rs-demand-btns"><a class="rs-db1" onclick="rwDemandEmail()">&#9993; Draft the email &rarr;</a><a class="rs-db2" onclick="rwDemand()">Copy the text</a><a class="rs-db3" href="tel:3056233500">Call &middot; 305-623-3500</a></div><div class="rs-demand-links" id="rsDemandTo">Send it to: <a href="https://miamidade.floridahealth.gov/contact-us/" target="_blank" rel="noopener">FL Dept of Health &middot; Miami-Dade</a> &middot; <a href="https://www.miamidade.gov/global/water/contact-water-sewer.page" target="_blank" rel="noopener">Miami-Dade Water &amp; Sewer</a></div><div class="rs-demand-done" id="rwDemandDone" role="status"></div></div></div></li><li><span class="n">3</span><div><b>Verify it yourself.</b> Every number traces to the government&rsquo;s own report. <a id="rsProtoRpt" target="_blank" rel="noopener">Open your system&rsquo;s official report &#9656;</a></div></li></ol></div>
-    <div class="rs-acc st">
-     <div class="rs-item" id="rsHealthItem"><button class="rs-h" onclick="rsTog(this)">What these levels have been linked to <span>+</span></button>
-      <div class="rs-b"><b>These are population-level associations from the science, not a diagnosis or a prediction for any one person.</b> PFAS exposure has been studied for decades; the strength of evidence varies by condition, so we rank it by who has established it.<br><br>
-      <b>Strongest evidence</b> &mdash; the <b>C8 Science Panel</b> (a court-supervised study of ~69,000 people) found a &ldquo;probable link,&rdquo; and these are the injuries the national firefighting-foam lawsuits (<b>AFFF MDL</b>) are built on:
-      <ul class="rs-ul"><li><b>Kidney cancer</b></li><li><b>Testicular cancer</b></li><li><b>Thyroid disease</b></li><li><b>Ulcerative colitis</b></li><li>High cholesterol &middot; pregnancy-induced high blood pressure / preeclampsia</li></ul>
-      <b>Established by the EPA &amp; the National Academies</b> (developing, but named by federal science):
-      <ul class="rs-ul"><li>Reduced fertility &amp; hormone disruption</li><li>Developmental effects in children &mdash; low birth weight, bone changes, accelerated puberty, behavioral changes</li><li>Weaker immune response, including to vaccines</li><li>Prostate cancer &middot; liver damage &middot; raised cholesterol / obesity risk</li></ul>
-      <b>Emerging / mixed evidence</b> (one authority, or a &ldquo;suggestive&rdquo; tier): breast cancer, liver-enzyme changes, neurobehavioral effects.<br><br>
-      <b>Children and pregnant or nursing mothers are the most vulnerable</b> &mdash; they drink more water per pound of body weight, and children are still developing. This is why the health-based goal is zero, and why filtering matters most for young families.<br><br>
-      <span style="font-family:var(--mono);font-size:10px;color:#54636f">Sources: C8 Science Panel (probable-link findings) &middot; EPA &ldquo;Our Current Understanding of Human Health &amp; Environmental Risks of PFAS&rdquo; &middot; National Academies (NASEM) 2022 clinical guidance &middot; AFFF MDL 2873 bellwether injuries. Association, not proven causation for any individual.</span></div></div>
-      <div class="rs-item"><button class="rs-h" onclick="rsTog(this)">What this is based on <span>+</span></button>
-      <div class="rs-b" id="rsBasis"></div></div>
-     <div class="rs-item"><button class="rs-h" onclick="rsTog(this)">How is this score calculated? <span>+</span></button>
-      <div class="rs-b">
-      <div class="rs-w"><span class="rs-wl">Total PFAS burden &mdash; every detected compound, short-chain and long</span><span class="rs-wb"><i style="width:100%"></i></span><span class="rs-wv">30%</span></div>
-      <div class="rs-w"><span class="rs-wl">Regulated PFOS / PFOA vs the 4 ppt federal limit</span><span class="rs-wb"><i style="width:83%"></i></span><span class="rs-wv">25%</span></div>
-      <div class="rs-w"><span class="rs-wl">Margin vs the 2022 health advisories &mdash; goal: zero</span><span class="rs-wb"><i style="width:83%"></i></span><span class="rs-wv">25%</span></div>
-      <div class="rs-w"><span class="rs-wl">Long-chain persistence &amp; bioaccumulation</span><span class="rs-wb"><i style="width:67%"></i></span><span class="rs-wv">20%</span></div>
-      <div style="margin:12px 0 4px">These four weights are the score&rsquo;s actual arithmetic &mdash; the deduction taken from each benchmark is printed under the card. The score <b>summarizes what has been measured in your water system and how it compares to the federal benchmarks</b>; it does <b>not</b> predict any one person&rsquo;s health. Read from your utility&rsquo;s own EPA UCMR5 reporting (2023&ndash;25), as of July 2026.</div>
-      The score reads <b>every PFAS compound your water system reports</b> to EPA &mdash; not just PFOS. Four benchmarks, weighted for the protection of children and log-scaled so early exceedance registers early: <b>Legal</b> &mdash; the regulated compounds (PFOS, PFOA) against the 4 ppt federal limit (25 pts). <b>Health</b> &mdash; the same against the EPA&rsquo;s 2022 health advisories (0.02 ppt PFOS, 0.004 ppt PFOA), whose goal is zero (25 pts). <b>Total PFAS burden</b> &mdash; the sum of <i>all</i> detected PFAS, short-chain and long (30 pts). <b>Persistence &amp; bioaccumulation</b> &mdash; the long-chain compounds that build up in the body and move up the food chain (20 pts). These chemicals are <b>persistent</b> (they don&rsquo;t break down), <b>bioaccumulative</b> (they build up in blood and tissue), and <b>biomagnifying</b> (they concentrate up the food chain) &mdash; which is why total load matters, not one compound. 100 means the health goal is met, not merely the legal one. Every figure links to your utility&rsquo;s own report; the arithmetic is shown, never a black box.</div></div>
-     <div class="rs-item"><button class="rs-h" onclick="rsTog(this)">Short-chain vs long-chain &mdash; what to look for <span>+</span></button>
-      <div class="rs-b"><b>Long-chain</b> PFAS (PFOS, PFOA) are the regulated ones &mdash; they bind to blood proteins and take about 5 years to fall by half. <b>Short-chain</b> PFAS (6:2 FTS, PFPeA, PFHxA) are present in the <i>largest</i> amounts in Miami &mdash; up to 190 ppt of firefighting-foam compound at the airport-side plant &mdash; and have <b>no legal limit at all</b>. A water report can be legally compliant while its largest contaminant is unregulated.</div></div>
-     <div class="rs-item"><button class="rs-h" onclick="rsTog(this)">Bioaccumulation &amp; children <span>+</span></button>
-      <div class="rs-b"><b>Persistence:</b> the carbon&ndash;fluorine bond does not break down &mdash; not in the environment, not in your body &mdash; which is why PFAS are called &ldquo;forever chemicals.&rdquo; <b>Bioaccumulation:</b> because intake outpaces the body&rsquo;s slow clearance (a half-life of years), the amount in your blood climbs with every year you drink the same water, settling at roughly <b>100&times; the concentration in the water itself</b>. Children are most exposed on both fronts: they drink far more water per pound of body weight, and they have a lifetime of accumulation still ahead of them. That is why this score grades <b>chronic buildup against the health-based benchmark</b>, not a single day&rsquo;s sample against the legal line.</div></div>
+    <div class="stamp" id="wcLabel" style="margin-top:14px">Bars show PFOS — the one federally regulated headline compound · 11 PFAS compounds measured in your system</div>
+    <div class="jumpfix"><a href="#fix">↓ It&rsquo;s a solved problem — jump to your 99.9% fix</a></div>
+  </div>
+
+  <!-- WHY -->
+  <div class="sec" id="rsHealth" style="background:var(--soft)">
+    <div class="kick tealkick" style="color:var(--teal);margin-bottom:20px">Why this matters</div>
+    <div class="megawrap">
+      <div class="mega">#2<span class="serif mut" style="font-size:34px;font-weight:400"> of 67</span></div>
+      <div class="megacap">Florida county for <b class="brick">thyroid cancer</b> — <b class="brick">still climbing</b></div>
     </div>
-    <div class="wc-src st" id="wcSrc"></div>
-   </div>
-   <div class="rv-doors st">
-    <button class="rv-d rv-save" onclick="rwSaveCard()">Save this card</button>
-    <button class="rv-d" onclick="rwPrintAdvisory()">&#9113; Print advisory</button>
-    <button class="rv-d" onclick="rwView('investigations')">Why? &rarr; Investigation N&ordm; 1</button>
-    <button class="rv-d" onclick="rwEnterMap()">See it on the map</button>
-   </div>
-   <div class="rv-postcred st">
-    <div class="rv-suit">PFAS are man-made &ldquo;forever chemicals&rdquo; from the <b>firefighting foam</b> sprayed at the airport for decades &mdash; they don&rsquo;t break down, and they&rsquo;ve reached the water. In 2023 Miami-Dade <a href="https://www.miamidade.gov/govaction/matter.asp?matter=232288&amp;file=false&amp;fileAnalysis=false&amp;yearFolder=Y2023" target="_blank" rel="noopener">joined settlements</a> with 3M and DuPont over that contamination &mdash; expecting roughly <b>$199&nbsp;million from 3M alone</b>, against a cleanup estimate of up to <b>$3&nbsp;billion</b>.</div>
-    <div class="rv-cred">Sourced from the public record &mdash; <a href="https://www.epa.gov/pfas/our-current-understanding-human-health-and-environmental-risks-pfas" target="_blank" rel="noopener">EPA</a> &middot; <a href="https://floridadep.gov/waste/waste-cleanup/content/fire-training-facility-preliminary-site-assessments" target="_blank" rel="noopener">Florida DEP</a> &middot; <a href="https://www.miamidade.gov/resources/water/documents/2025-water-quality-report.pdf" target="_blank" rel="noopener">Miami-Dade County</a> &middot; <a href="https://www.epa.gov/dwucmr/fifth-unregulated-contaminant-monitoring-rule" target="_blank" rel="noopener">EPA UCMR5</a> &middot; <a href="https://pubmed.ncbi.nlm.nih.gov/?term=PFAS+drinking+water+health" target="_blank" rel="noopener">NIH / peer-reviewed studies</a> &middot; <a href="https://doi.org/10.3390/ijerph22081290" target="_blank" rel="noopener">University of Miami Sylvester</a> &middot; <a href="https://news.fiu.edu/2024/its-literally-raining-forever-chemicals-in-miami" target="_blank" rel="noopener">FIU scientists</a> &middot; the <a href="https://web.archive.org/web/2024/http://www.c8sciencepanel.org/prob_link.html" target="_blank" rel="noopener">C8 Science Panel</a>. Every figure links to its source.</div>
-   </div>
-   <div class="rv-next st"><a onclick="rwView('investigations')">Compare Miami-Dade systems</a><a onclick="rwView('evidence')">Read the evidence</a></div>
-   <div class="rv-again st"><a onclick="rwReset()">Try another ZIP</a></div>
+    <div class="subline">1.4× the U.S. average · up to 2.8× in the airport corridor · Miami Beach itself 1.7×</div>
+    <div class="epa-lab"><span class="tag">U.S. EPA</span> What current science shows PFAS exposure may cause</div>
+    <div class="epa">
+      <div class="epa-li"><span class="dot">●</span><span><b>Reproductive effects</b> — such as decreased fertility or increased high blood pressure in pregnant women.</span></div>
+      <div class="epa-li"><span class="dot">●</span><span><b>Developmental effects or delays in children</b> — including low birth weight, accelerated puberty, bone variations, behavioral changes, or neurodevelopmental effects.</span></div>
+      <div class="epa-li"><span class="dot">●</span><span><b>Increased risk of some cancers</b> — including prostate, <b class="brick">kidney</b>, and testicular cancers.</span></div>
+      <div class="epa-li"><span class="dot">●</span><span><b>Thyroid disease</b> — a probable link established by the court-supervised C8 Science Panel.</span></div>
+      <div class="epa-li"><span class="dot">●</span><span><b>Reduced ability of the immune system to fight infections</b> — including reduced vaccine response.</span></div>
+      <div class="epa-li"><span class="dot">●</span><span><b>Interference with the body&rsquo;s natural hormones.</b></span></div>
+      <div class="epa-li"><span class="dot">●</span><span><b>Increased cholesterol levels and/or risk of obesity.</b></span></div>
+    </div>
+    <div class="epa-note"><b>Pregnant and lactating women</b> tend to drink more water per pound of body weight than the average person, so they may have higher PFAS exposure if it is present in their drinking water. And because <b>children</b> are still developing, they may be more sensitive to PFAS — and they drink more water, eat more food, and breathe more air per pound of body weight than adults, which can increase their exposure.</div>
+    <div class="epa-cite">— U.S. Environmental Protection Agency, on current peer-reviewed science · thyroid disease per the C8 Science Panel</div>
+    <div class="quote">Miami-Dade’s own 2025 water report admits PFAS can cause “liver, immune, and thyroid effects … and developmental and thyroid effects during pregnancy and childhood.”</div>
+    <div class="note">There is also an emergent <b class="brick">kidney-cancer cluster</b> in the same airport-foam corridor around Miami International Airport — <a href="#map" onclick="rwEnterMap();return false;">see it on the map →</a></div>
+  </div>
+
+
+  <!-- THREE HATS -->
+  <div class="sec" id="rsHats" style="background:var(--soft)">
+    <div class="kick" style="margin-bottom:8px">One county — Miami-Dade. Three hats.</div>
+    <div class="subline" style="margin-bottom:22px">The water almost everyone here drinks comes from a single government: <b style="color:var(--ink)">Miami-Dade County</b>.</div>
+    <div class="hatrow"><div class="hatverb">Owns</div><div class="hatdesc">the airport where the firefighting foam was used for decades.</div></div>
+    <div class="hatrow"><div class="hatverb">Sells</div><div class="hatdesc">you the water — and called it “excellent,” then quietly deleted “safe.”</div></div>
+    <div class="hatrow"><div class="hatverb">Sues</div><div class="hatdesc">over the very same contamination — seeking about <b>$199 million</b>.</div></div>
+  </div>
+
+  <!-- READ THE FINE PRINT — ZIP / utility reflective (driven by ZIPSYS: 0=Miami-Dade, 1=Miami Beach) -->
+  <div class="sec" id="fineprint">
+    <div class="kick" style="margin-bottom:26px">Read the fine print</div>
+    <div class="bighook" id="fp-hook"></div>
+    <div class="note" id="fp-body" style="margin-top:26px"></div>
+    <div class="quote" id="fp-quote" style="margin-top:28px"></div>
+  </div>
+
+  <!-- FIX -->
+  <div class="sec" id="fix" style="background:var(--soft)">
+    <div class="kick" style="margin-bottom:22px">Your 99.9% solution</div>
+    <div class="megawrap" style="margin-bottom:8px"><div class="mega">99.9%</div></div>
+    <div class="note" style="margin-bottom:30px;font-size:23px">of PFAS removed — with <b>two certified barriers in series</b>. Not one. Two.</div>
+
+    <div class="step"><span class="n">1</span><div><b class="fxh1">Get your drinking water from a cleaner source — best option first.</b>
+      <div class="substep fxsa"><b>1A · Atmospheric water generation → reverse osmosis (RO)</b> — the ceiling. It makes water from the air (near-zero PFAS at the source), then a certified RO stage polishes it.</div>
+      <div class="substep fxsb"><b>1B · Certified anion exchange → RO</b> (NSF/ANSI 53 &amp; 58) — the proven two-barrier stack.</div>
+      <div class="dnote fxnote" style="margin-top:10px">Either way, two barriers in series — a carbon pitcher alone misses the short-chain PFAS.</div>
+      <div class="protolink"><a href="https://riganowater.com/#protocols" onclick="rwView('protocols');return false;">See the exact systems — premium builds <b>and</b> the least-expensive stacks that still catch short-chain PFAS →</a></div>
+    </div></div>
+    <div class="step"><span class="n">2</span><div><b class="fxh2">Take your advisory — and make them act.</b> A one-page Drinking Water Advisory for <span id="rsProtoSys">your system</span> — hand it to your building, school, or commissioner. <a class="lnk fxadv" onclick="rwPrintAdvisory()">Open · view &amp; save as PDF ▸</a>
+      <div class="demand">
+        <p>The county has this data and issued <b>no public advisory</b>. One tap drafts the email — you just press send. Pre-addressed to Miami-Dade Water &amp; Sewer, Florida Health, the Mayor — and the City of Miami Beach.</p>
+        <div class="dbtns"><a class="dbtn brick" onclick="rwDemandEmail()">✉ Draft the email →</a><a class="dbtn dcopy" onclick="rwDemand()">Copy the text</a><a class="dbtn dcall" href="tel:3056233500">Call · 305-623-3500</a></div><div class="dnote" id="rsDemandTo"></div><div id="rwDemandDone" role="status" style="font-family:var(--mono,'JetBrains Mono');font-size:12.5px;color:var(--teal);margin-top:8px"></div>
+      </div>
+    </div></div>
+    <div class="step"><span class="n">3</span><div><b class="fxh3">Verify it yourself.</b> Every number traces to the government&rsquo;s own report. <a class="lnk" id="rsProtoRpt" target="_blank" rel="noopener">Open your system&rsquo;s official report ▸</a></div></div>
+  </div>
+
+  <!-- THE SCIENCE (depth, collapsed) -->
+  <div class="sec">
+    <div class="kick tealkick gdk" style="color:var(--teal);margin-bottom:10px">Go deeper — open what you want to check</div>
+
+    <details class="acc" style="border-top:none"><summary>What is PFAS, and how did it get here? <span class="pm">+</span></summary><div class="accb">
+      PFAS are industrial &ldquo;forever chemicals&rdquo; from the military-grade firefighting foam sprayed at Miami International Airport for decades. The carbon&ndash;fluorine bond doesn&rsquo;t break down — they persist and build up in water and in the human body, and are <b>known to cause cancer</b>. They reached the wells that serve Miami-Dade. In 2023 Miami-Dade joined settlements with 3M and DuPont over the contamination — expecting roughly <b>$199 million from 3M alone</b>, against a cleanup estimate of up to <b>$3 billion</b>.
+    </div></details>
+
+    <details class="acc"><summary>How we know it&rsquo;s the water — not chance <span class="pm">+</span></summary><div class="accb">
+      <div class="statrow" style="margin-top:12px"><div class="statnum">5 km</div><div class="statcap">Living within <b>5 km of a PFAS site</b> predicts higher thyroid-cancer rates.</div></div>
+      <div class="cite">Univ. of Miami School of Medicine · Wild et al. 2025 · peer-reviewed, association</div>
+      <div class="divider"></div>
+      <div class="statrow"><div class="statnum">+56%</div><div class="statcap">Each doubling of <b>PFOS in the blood</b> is linked to a 56% higher rate of thyroid cancer.</div></div>
+      <div class="cite">van Gerwen et al. 2023, eBioMedicine · OR 1.56 · association</div>
+      <div class="synth" style="border-top:1px solid var(--hair);padding-top:20px;margin-top:22px">Closer to the source, <b>and</b> higher in the blood — both raise the risk. That is exposure, not coincidence.</div>
+    </div></details>
+
+    <details class="acc"><summary>What these levels have been linked to <span class="pm">+</span></summary><div class="accb">
+      <b>These are population-level associations from the science, not a diagnosis or a prediction for any one person.</b> The strength of evidence varies by condition, so we rank it by who has established it.
+      <div class="sublab">Strongest evidence</div>
+      The <b>C8 Science Panel</b> (a court-supervised study of ~69,000 people) found a &ldquo;probable link,&rdquo; and these are the injuries the national firefighting-foam lawsuits (<b>AFFF MDL</b>) are built on:
+      <ul><li><b>Kidney cancer</b></li><li><b>Testicular cancer</b></li><li><b>Thyroid disease</b></li><li><b>Ulcerative colitis</b></li><li>High cholesterol · pregnancy-induced high blood pressure / preeclampsia</li></ul>
+      <div class="sublab">Established by the EPA &amp; the National Academies</div>
+      <ul><li>Reduced fertility &amp; hormone disruption</li><li>Developmental effects in children — low birth weight, bone changes, accelerated puberty, behavioral changes</li><li>Weaker immune response, including to vaccines</li><li>Prostate cancer · liver damage · raised cholesterol / obesity risk</li></ul>
+      <div class="sublab">Emerging / mixed evidence</div>
+      breast cancer, liver-enzyme changes, neurobehavioral effects.<br><br>
+      <b>Children and pregnant or nursing mothers are the most vulnerable</b> — they drink more water per pound of body weight, and children are still developing. This is why the health-based goal is zero.
+      <div class="cite" style="margin-top:14px">Sources: C8 Science Panel · EPA &ldquo;Our Current Understanding of Human Health &amp; Environmental Risks of PFAS&rdquo; · National Academies (NASEM) 2022 · AFFF MDL 2873. Association, not proven causation for any individual.</div>
+    </div></details>
+
+    <details class="acc"><summary>How is this score calculated? <span class="pm">+</span></summary><div class="accb">
+      Four benchmarks, weighted for the protection of children and log-scaled so early exceedance registers early:
+      <ul><li><b>Total PFAS burden — 30%.</b> Every detected compound, short-chain and long.</li><li><b>Legal — 25%.</b> Regulated PFOS / PFOA vs the 4 ppt federal limit.</li><li><b>Health — 25%.</b> The same vs the EPA&rsquo;s 2022 advisories (0.02 PFOS, 0.004 PFOA) — goal: zero.</li><li><b>Persistence — 20%.</b> Long-chain compounds that build up in the body.</li></ul>
+      100 means the health goal is met, not merely the legal one. Read from your utility&rsquo;s own EPA UCMR5 reporting (2023–25). The arithmetic is shown under the card — never a black box.
+    </div></details>
+
+    <details class="acc"><summary>Short-chain vs long-chain — what to look for <span class="pm">+</span></summary><div class="accb">
+      <b>Long-chain</b> PFAS (PFOS, PFOA) are the regulated ones — they bind to blood proteins and take about 5 years to fall by half. <b>Short-chain</b> PFAS (6:2 FTS, PFPeA, PFHxA) are present in the <i>largest</i> amounts in Miami — up to <b>190 ppt</b> of firefighting-foam compound at the airport-side plant — and have <b>no legal limit at all</b>. A water report can be legally compliant while its largest contaminant is unregulated.
+    </div></details>
+
+    <details class="acc"><summary>Bioaccumulation &amp; children <span class="pm">+</span></summary><div class="accb">
+      <b>Persistence:</b> the carbon–fluorine bond does not break down — not in the environment, not in your body — which is why PFAS are called &ldquo;forever chemicals.&rdquo; <b>Bioaccumulation:</b> because intake outpaces the body&rsquo;s slow clearance, the amount in your blood climbs with every year you drink the same water, settling at roughly <b>100× the concentration in the water itself</b>. Children are most exposed: they drink far more water per pound, and have a lifetime of accumulation still ahead.
+    </div></details>
+
+    <details class="acc"><summary>What this score is based on (your system) <span class="pm">+</span></summary><div class="accb" id="rsBasis">
+      Your ZIP is served by <b>Miami Beach</b>, which buys <b>100% of its water from Miami-Dade WASD</b> — so this score uses the figures Miami-Dade publishes: PFOS <b>33 ppt</b> against a limit of 4. That is also the figure the City prints in its own 2025 report. Separately, EPA&rsquo;s federal UCMR5 sampling at Miami Beach&rsquo;s own connection measured PFOS <b>24 ppt</b> in 2023 — both figures are real.<br><br>
+      <b>Historical levels were far higher.</b> Before 2019, source wells tested <b>124–184 ppt</b> total PFAS; the county pulled its worst wells offline and now blends the rest — so today&rsquo;s number is an engineered average, not a cleanup.
+    </div></details>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sec">
+    <div class="kick srck" style="margin-bottom:16px">Sourced from the public record</div>
+    <div class="srcwrap" id="rsSrc" style="margin-bottom:14px"></div>
+    <div class="srcwrap"><a href="https://www.epa.gov/pfas/our-current-understanding-human-health-and-environmental-risks-pfas" target="_blank" rel="noopener">EPA</a> · <a href="https://floridadep.gov/waste/waste-cleanup/content/fire-training-facility-preliminary-site-assessments" target="_blank" rel="noopener">Florida DEP</a> · <a href="https://www.miamidade.gov/resources/water/documents/2025-water-quality-report.pdf" target="_blank" rel="noopener">Miami-Dade County</a> · <a href="https://www.epa.gov/dwucmr/fifth-unregulated-contaminant-monitoring-rule" target="_blank" rel="noopener">EPA UCMR5</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=PFAS+drinking+water+health" target="_blank" rel="noopener">NIH / peer-reviewed studies</a> · <a href="https://doi.org/10.3390/ijerph22081290" target="_blank" rel="noopener">University of Miami Sylvester</a> · <a href="https://news.fiu.edu/2024/its-literally-raining-forever-chemicals-in-miami" target="_blank" rel="noopener">FIU scientists</a> · <a href="https://web.archive.org/web/2024/http://www.c8sciencepanel.org/prob_link.html" target="_blank" rel="noopener">C8 Science Panel</a>. Every figure links to its source.</div>
+    <div class="byline">Rigano Water Institute</div>
+    <div class="cite" id="wcSrc" style="margin-top:12px"></div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="sec">
+    <div class="kick actk" style="margin-bottom:20px">Do something with this</div>
+    <div class="actions">
+      <button class="btn brick" onclick="rwCardShare()">◨ Save image</button>
+      <button class="btn solid" onclick="rwDemandEmail()">✉ Email the county <span class="a">→</span></button>
+      <button class="btn baprint" onclick="rwPrintAdvisory()">◫ Print advisory</button>
+      <button class="btn bareset" onclick="rwReset()">Check another ZIP</button>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="foot">
+    <span class="url">riganowater.com</span>
+    <span class="src">FL Cancer Data System · EPA UCMR5 · C8 Panel · Miami-Dade WQR 2025 · nothing sold</span>
+  </div>
+
+</div>
+</div>
+</div>
+   <div class="mw2"><div class="cardnav"><a onclick="rwView(&#39;investigations&#39;)">Why? &rarr; Investigation N&ordm; 1</a><a onclick="rwView(&#39;investigations&#39;)">Compare Miami-Dade systems</a><a onclick="rwView(&#39;evidence&#39;)">Read the evidence</a></div></div>
   </div>
 <form class="h-search" onsubmit="try{return submitZip(event,'home')}catch(e){return false}">
     <input id="zipHome" inputmode="numeric" maxlength="5" placeholder="Your ZIP" autocomplete="off" aria-label="ZIP code">
@@ -3222,10 +3553,10 @@ function rwBuildScore(z){
  (function(){var _pl=(typeof Z2P!=='undefined'&&Z2P[z])?Z2P[z]:((typeof Z2PK!=='undefined'&&Z2PK[z])?Z2PK[z]:''), _ap=(typeof Z2PA!=='undefined'&&Z2PA.indexOf(z)>=0);var _e=document.getElementById('rsZip');if(_pl){_e.innerHTML='<b class="rs-place">'+_pl+(_ap?' area':'')+'</b><span class="rs-zipsm">ZIP '+z+'</span>';}else{_e.textContent='ZIP '+z;}})(); var _dto=document.getElementById('rsDemandTo'); if(_dto){var _es=(window.RWLANG==='es'); var _mb=/Miami Beach/i.test(r.name||''); _dto.innerHTML=(_es?'El borrador ya va dirigido a ':'The draft is pre-addressed to ')+'<b>'+(_es?'Agua y Alcantarillado de Miami-Dade, Salud de Florida y la Alcaldesa':'Miami-Dade Water &amp; Sewer, Florida Health, and the Mayor')+(_mb?(_es?', y la Ciudad de Miami Beach':', plus the City of Miami Beach'):'')+'</b>. <a href="https://miamidade.floridahealth.gov/contact-us/" target="_blank" rel="noopener">'+(_es?'Salud de Florida tambi\u00e9n lo recibe por formulario \u2192':'Florida Health also takes it by web form \u2192')+'</a>';}
  var _ps=document.getElementById('rsProtoSys');if(_ps)_ps.textContent=r.name;
  var _prp=document.getElementById('rsProtoRpt');if(_prp)_prp.href=r.rpt;
- var _cf=document.getElementById('rsConf');if(_cf)_cf.innerHTML=r.deflt?'Regional estimate &middot; county system record &middot; updated July 2026':'High confidence &middot; lab samples on record &middot; updated July 2026';
- document.getElementById('wcLabel').textContent=r.ndet+' PFAS compounds measured \u00b7 '+r.name;
+ var _cf=document.getElementById('rsConf');if(_cf)_cf.innerHTML='Your system has shown up to <b>'+r.total+' ppt total PFAS</b>'+(r.deflt?' (regional estimate)':'');
+ document.getElementById('wcLabel').textContent='Bars show PFOS \u00b7 '+r.ndet+' PFAS compounds measured in '+r.name;
  document.getElementById('wcT1').textContent='Your water';
- document.getElementById('wcV1').textContent=r.pfos+' ppt'; var _xo=Math.max(1,Math.round(r.pfos/4)); var _vd=document.getElementById('rsVerdict'); var _av=Math.max(1,Math.round(r.pfos/0.02)); if(_vd)_vd.innerHTML='In plain terms &mdash; your tap water runs about <b>'+_xo+'&times; over the federal PFAS limit</b> &mdash; and about <b>'+_av.toLocaleString()+'&times; the 2022 EPA health advisory</b>. The only amount considered safe is <b>zero</b>.'; var _src=document.getElementById('rsSrc'); if(_src){var _kn=!r.deflt; _src.innerHTML=(_kn?'<span class="rs-src-badge">MEASURED</span> ':'<span class="rs-src-badge amb">REGIONAL</span> ')+'<b>'+r.pfos+' ppt</b> PFOS'+(_kn?'':' (county main system)')+' in finished water &mdash; source: <a href="'+r.rpt+'" target="_blank" rel="noopener">'+r.name+' report</a> + federal EPA UCMR5. Utilities must meet the 4&nbsp;ppt federal limit by <b>April 2029</b> &mdash; this is your water today. <span class="rs-src-ind">By Gregory James Rigano &middot; Rigano Water Institute &mdash; independent, non-commercial, nothing for sale. <a onclick="rwView(&#39;about&#39;)">Who we are &rarr;</a></span>';}
+ document.getElementById('wcV1').textContent=r.pfos+' ppt'; var _xo=Math.max(1,Math.round(r.pfos/4)); var _vd=document.getElementById('rsVerdict'); var _av=Math.max(1,Math.round(r.pfos/0.02)); if(_vd)_vd.innerHTML='In plain terms &mdash; your tap water runs about <b>'+_xo+'&times; over the federal PFAS limit</b> &mdash; and about <b>'+_av.toLocaleString()+'&times; the 2022 EPA health advisory</b>. According to the EPA, the only amount considered safe is <b>zero</b>.'; var _src=document.getElementById('rsSrc'); if(_src){var _kn=!r.deflt; _src.innerHTML=(_kn?'<span class="rs-src-badge">MEASURED</span> ':'<span class="rs-src-badge amb">REGIONAL</span> ')+'<b>'+r.pfos+' ppt</b> PFOS'+(_kn?'':' (county main system)')+' in finished water &mdash; source: <a href="'+r.rpt+'" target="_blank" rel="noopener">'+r.name+' report</a> + federal EPA UCMR5. Utilities must meet the 4&nbsp;ppt federal limit by <b>April 2029</b> &mdash; this is your water today.';}
  var isW = (r.rpt||'').indexOf('miamidade')>=0;
  var rptName = isW?'Miami-Dade WASD 2025 Water Quality Report':(r.name+' water-quality report');
  document.getElementById('rsBasis').innerHTML=
@@ -3233,6 +3564,7 @@ function rwBuildScore(z){
   'Your ZIP is served by <b>'+r.name+'</b>. This score reads that system\u2019s <b>'+r.ndet+' detected PFAS compounds</b> \u2014 total <b>'+r.total+' ppt</b> (PFOS '+r.pfos+', PFOA '+r.pfoa+(r.fts>0?(', 6:2 FTS '+r.fts+' \u2014 firefighting foam, no legal limit'):'')+'), finished water, from the utility\u2019s own reporting to <b>EPA UCMR5</b>. Matrix: FINISHED WATER.<br><br>'
   +(r.purch?('<div class="rs-whl"><b>Where this number comes from.</b> '+r.name.replace(/ \(WASD\)/,'')+' produces no water of its own \u2014 it buys all of it from <b>Miami-Dade WASD</b>. So this score uses the figures <b>Miami-Dade publishes</b> for that water: PFOS <b>'+r.pfos+'&nbsp;ppt</b> against a limit of 4. '+(r.rnote||'')+((r.lpfos!=null)?(' Separately, EPA\u2019s federal UCMR5 sampling taken at <b>'+r.name.replace(/ \(WASD\)/,'')+'\u2019s own connection</b> to the county main measured PFOS <b>'+r.lpfos+'&nbsp;ppt</b> ('+r.lndet+' PFAS compounds, '+r.ltot+'&nbsp;ppt total) in 2023. Both figures are real: the first is what the utility publishes for the water it sells you, the second is one set of samples at your town\u2019s meter. We show both.'):'')+'</div>'):'')+'&#9656; <a href="'+r.rpt+'" target="_blank" rel="noopener" style="color:#0b7488;border-bottom:1px solid rgba(12,126,147,.35)">Open your water system\u2019s official report ('+rptName+')</a>'
   +'<br><br><b>Historical levels were far higher.</b> Before 2019, source wells feeding this supply tested <b>124\u2013184 ppt total PFAS</b>; the county pulled its worst wells offline and now blends the rest \u2014 so today\u2019s number is an engineered average, not a cleanup. In 2013\u201314, Miami finished water measured PFOS 47\u201358 ppt. The contamination did not leave; the reported number was lowered by blending.';
+ (function(){var _es=(window.RWLANG==='es');var _mb=/Miami Beach/i.test(r.name||'');var H=document.getElementById('fp-hook'),B=document.getElementById('fp-body'),Q=document.getElementById('fp-quote');if(!H)return;if(_es){if(_mb){H.innerHTML='Es el agua de Miami-Dade &mdash; y tu ciudad la llama <b>&ldquo;excelente.&rdquo;</b>';B.innerHTML='Miami Beach compra <b>el 100% de su agua a Miami-Dade</b> &mdash; la misma agua &mdash; y aun así su informe afirma, como hecho comprobado, que los datos &ldquo;confirman que la calidad del agua potable de la ciudad sigue siendo excelente &mdash; <b>no solo segura</b>,&rdquo; impreso junto a fotografías de niños. En sus páginas nunca le dice a una familia que filtre.';Q.innerHTML='&ldquo;los datos confirman&hellip; excelente &mdash; no solo segura.&rdquo;<span class=\"cite\" style=\"display:block;margin-top:12px\">&mdash; Informe de Calidad del Agua de la Ciudad de Miami Beach</span>';}else{H.innerHTML='Borraron la palabra <b>&ldquo;segura.&rdquo;</b> Dejaron la foto del niño bebiéndola.';B.innerHTML='El informe de agua 2025 de Miami-Dade eliminó &ldquo;segura&rdquo; de cada frase que describe el agua. Las fotografías de niños se quedaron. En 24 páginas, nunca le dice a una familia que filtre.';Q.innerHTML='&ldquo;&hellip;efectos en el desarrollo y la tiroides durante el embarazo y la niñez.&rdquo;<span class=\"cite\" style=\"display:block;margin-top:12px\">&mdash; Condado de Miami-Dade, Informe de Calidad del Agua 2025</span>';}}else{if(_mb){H.innerHTML='It’s Miami-Dade’s water &mdash; and your city calls it <b>&ldquo;excellent.&rdquo;</b>';B.innerHTML='Miami Beach buys <b>100% of its water from Miami-Dade</b> &mdash; the same water &mdash; yet its report states, as a finding of fact, that the data &ldquo;confirms the city’s drinking water quality continues to be excellent &mdash; <b>not just safe</b>,&rdquo; printed with photographs of children. In its pages it never once tells a family to filter.';Q.innerHTML='&ldquo;the data confirms&hellip; excellent &mdash; not just safe.&rdquo;<span class=\"cite\" style=\"display:block;margin-top:12px\">&mdash; City of Miami Beach Water Quality Report</span>';}else{H.innerHTML='They deleted the word <b>&ldquo;safe.&rdquo;</b> They kept the photo of the child drinking it.';B.innerHTML='Miami-Dade’s 2025 water report removed &ldquo;safe&rdquo; from every sentence describing the water. The photographs of children stayed. In 24 pages, it never once tells a family to filter.';Q.innerHTML='&ldquo;&hellip;developmental and thyroid effects during pregnancy and childhood.&rdquo;<span class=\"cite\" style=\"display:block;margin-top:12px\">&mdash; Miami-Dade County, 2025 Water Quality Report</span>';}}})();
  document.getElementById('wcSrc').textContent=r.parts+' \u00b7 benchmarks: EPA NPDWR 2024 (4 ppt/compound) \u00b7 EPA Interim HA 2022 (PFOS 0.02, PFOA 0.004 ppt) \u00b7 EPA UCMR5 \u00b7 Rigano Water Institute';
  document.getElementById('rvCardWrap').style.display='flex';
  /* accordions collapsed by default */
@@ -4294,7 +4626,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   ['.rv-tag','Todos los sistemas públicos de agua de <b style="color:#12212f;font-weight:600">Miami-Dade</b> superan el límite federal de PFAS — “químicos eternos” vinculados a <b style="color:#c0362a;font-weight:600">enfermedad de tiroides, cáncer</b> y daños a los niños.','h'],
   ['#rzip','CÓDIGO POSTAL','p'],
   ['.rv-form button','Ver tu Puntaje del Agua →','t'],
-  ['.wc-tag','Puntaje del Agua del Hogar','t'],
+  ['.mw2 .hk','Puntaje del Agua del Hogar','t'],
   ['.rs-peak-l','Compártelo con un amigo','t'],
   ['.rwrk-kick','La clasificación de Miami-Dade','t'],
   ['.rwrk-h','Cada sistema público de agua de Miami-Dade, clasificado por PFAS','t'],
@@ -4310,8 +4642,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   ['.rs-db1','✉ Redactar el correo →','t'],
   ['.rs-db3','Llamar · 305-623-3500','t'],
   ['.rw-cardbtn','▣ Guardar imagen','t'],
-  ['.rs-health','<div class="rsh-h">Por qué esto importa para tu familia</div><p class="rsh-thy">Miami-Dade tiene la <b>2.ª tasa de cáncer de tiroides más alta de los 67 condados de Florida</b> &mdash; unas <b>1.4&times; el promedio de EE.&nbsp;UU.</b> y en aumento, llegando a <b>2.2&ndash;2.8&times;</b> en zonas críticas como North Bay Village, Doral y Miami Springs. Miami Beach está en <b>1.7&times;</b> la tasa nacional. <span class="rsh-cite">Florida Cancer Data System / SCAN360, ajustado por edad 2016&ndash;2020.</span></p><div class="rsh-sub">La ciencia federal &mdash; el Panel Científico C8, la EPA y las Academias Nacionales &mdash; vincula la exposición prolongada a PFAS con:</div><ul class="rsh-list"><li>Cáncer de riñón y testicular</li><li>Enfermedad de la tiroides</li><li>Colesterol alto</li><li>Colitis ulcerosa</li><li>Presión alta y preeclampsia en el embarazo</li><li>Respuesta inmune y a vacunas más débil</li><li>Bajo peso al nacer y efectos en el desarrollo infantil</li></ul><p class="rsh-own">El propio informe de agua 2025 de Miami-Dade admite que los PFAS pueden causar &ldquo;efectos en el hígado, el sistema inmune y la tiroides &hellip; y efectos en el desarrollo y la tiroides durante el embarazo y la niñez.&rdquo;</p>','h'],
-  ['.rs-db2','Copiar el texto','t']
+  ['#rsHealth','<div class="kick tealkick" style="color:var(--teal);margin-bottom:20px">Por qué esto importa</div><div class="megawrap"><div class="mega">#2<span class="serif mut" style="font-size:34px;font-weight:400"> de 67</span></div><div class="megacap">condado de Florida en <b class="brick">cáncer de tiroides</b> &mdash; y <b class="brick">sigue subiendo</b></div></div><div class="subline">1.4&times; el promedio de EE. UU. · hasta 2.8&times; en el corredor del aeropuerto · Miami Beach en 1.7&times;</div><div class="epa-lab"><span class="tag">EPA de EE. UU.</span> Lo que la ciencia actual muestra que la exposición a PFAS puede causar</div><div class="epa"><div class="epa-li"><span class="dot">●</span><span><b>Efectos en la reproducción</b> &mdash; como disminución de la fertilidad o aumento de la presión arterial alta en mujeres embarazadas.</span></div><div class="epa-li"><span class="dot">●</span><span><b>Efectos o retrasos en el desarrollo de los niños</b> &mdash; como bajo peso al nacer, pubertad acelerada, variaciones óseas, cambios de comportamiento o efectos en el neurodesarrollo.</span></div><div class="epa-li"><span class="dot">●</span><span><b>Mayor riesgo de algunos tipos de cáncer</b> &mdash; como los de próstata, <b class="brick">riñón</b> y testículo.</span></div><div class="epa-li"><span class="dot">●</span><span><b>Enfermedad de la tiroides</b> &mdash; un vínculo probable establecido por el Panel Científico C8, supervisado por la corte.</span></div><div class="epa-li"><span class="dot">●</span><span><b>Menor capacidad del sistema inmunológico para combatir infecciones</b> &mdash; incluida una menor respuesta a las vacunas.</span></div><div class="epa-li"><span class="dot">●</span><span><b>Interferencia con las hormonas naturales del cuerpo.</b></span></div><div class="epa-li"><span class="dot">●</span><span><b>Aumento de los niveles de colesterol y/o del riesgo de obesidad.</b></span></div></div><div class="epa-note"><b>Las mujeres embarazadas y lactantes</b> tienden a beber más agua por libra de peso corporal que la persona promedio, por lo que pueden tener una mayor exposición a los PFAS si están presentes en su agua potable. Y como los <b>niños</b> todavía se están desarrollando, pueden ser más sensibles a los PFAS &mdash; y beben más agua, comen más alimentos y respiran más aire por libra de peso corporal que los adultos, lo que puede aumentar su exposición.</div><div class="epa-cite">&mdash; Agencia de Protección Ambiental de EE. UU., sobre la ciencia actual revisada por pares · enfermedad de tiroides según el Panel Científico C8</div><div class="quote">El propio informe de agua 2025 de Miami-Dade admite que los PFAS pueden causar &ldquo;efectos en el hígado, el sistema inmune y la tiroides &hellip; y efectos en el desarrollo y la tiroides durante el embarazo y la niñez.&rdquo;</div><div class="note">También hay un grupo emergente de <b class="brick">cáncer de riñón</b> en el mismo corredor donde se usó la espuma contra incendios, alrededor del Aeropuerto Internacional de Miami &mdash; <a href="#map" onclick="rwEnterMap();return false;">ver en el mapa &rarr;</a></div>','h'],
+  ['.rs-db2','Copiar el texto','t'],
+  ['#rsHats','<div class="kick" style="margin-bottom:8px">Un condado &mdash; Miami-Dade. Tres papeles.</div><div class="subline" style="margin-bottom:22px">El agua que casi todos aquí beben proviene de un solo gobierno: <b style="color:var(--ink)">el Condado de Miami-Dade</b>.</div><div class="hatrow"><div class="hatverb">Es dueño</div><div class="hatdesc">del aeropuerto donde se usó la espuma contra incendios durante décadas.</div></div><div class="hatrow"><div class="hatverb">Vende</div><div class="hatdesc">el agua que bebes &mdash; y la llamó &ldquo;excelente,&rdquo; y luego borró en silencio &ldquo;segura.&rdquo;</div></div><div class="hatrow"><div class="hatverb">Demanda</div><div class="hatdesc">por esa misma contaminación &mdash; reclamando unos <b>$199 millones</b>.</div></div>','h'],
+  ['.mw2 .jumpfix a','↓ Es un problema con solución — salta a tu arreglo del 99.9%','t'],
+  ['#fix .kick','Tu solución del 99.9%','t'],
+  ['#fix .note','de PFAS eliminados &mdash; con <b>dos barreras certificadas en serie</b>. No una. Dos.','h'],
+  ['.mw2 .fxh1','Obtén tu agua potable de una fuente más limpia &mdash; la mejor opción primero.','t'],
+  ['.mw2 .fxsa','<b>1A · Generación de agua atmosférica → ósmosis inversa (RO)</b> &mdash; el techo. Produce agua del aire (casi cero PFAS en el origen), y luego una etapa certificada de RO la pule.','h'],
+  ['.mw2 .fxsb','<b>1B · Intercambio aniónico certificado → RO</b> (NSF/ANSI 53 y 58) &mdash; la pila probada de dos barreras.','h'],
+  ['.mw2 .fxnote','En cualquier caso, dos barreras en serie &mdash; una jarra de carbón por sí sola no atrapa los PFAS de cadena corta.','t'],
+  ['.mw2 .protolink a','Ver los sistemas exactos &mdash; equipos premium <b>y</b> las opciones más económicas que aún atrapan los PFAS de cadena corta →','h'],
+  ['.mw2 .fxh2','Toma tu alerta &mdash; y haz que actúen.','t'],
+  ['.mw2 .fxadv','Abrir · ver y guardar como PDF ▸','t'],
+  ['.mw2 .demand p','El condado tiene estos datos y no emitió <b>ninguna alerta pública</b>. Un toque redacta el correo &mdash; tú solo presiona enviar. Predirigido a Miami-Dade Water &amp; Sewer, Salud de Florida, la Alcaldesa &mdash; y la Ciudad de Miami Beach.','h'],
+  ['.mw2 .dbtn.brick','✉ Redactar el correo →','t'],
+  ['.mw2 .dcopy','Copiar el texto','t'],
+  ['.mw2 .dcall','Llamar · 305-623-3500','t'],
+  ['.mw2 .fxh3','Verifícalo tú mismo.','t'],
+  ['#rsProtoRpt','Abrir el informe oficial de tu sistema ▸','t'],
+  ['.mw2 .gdk','Ve más a fondo — abre lo que quieras revisar','t'],
+  ['.mw2 .srck','De acuerdo con el registro público','t'],
+  ['.mw2 .actk','Haz algo con esto','t'],
+  ['.mw2 .btn.brick','◨ Guardar imagen','t'],
+  ['.mw2 .btn.solid','✉ Escribir al condado →','t'],
+  ['.mw2 .baprint','◫ Imprimir alerta','t'],
+  ['.mw2 .bareset','Consultar otro ZIP','t'],
+  ['#fineprint .kick','Lee la letra pequeña','t']
  ];
  var NAV={'Investigations':'Investigación','My Water':'Mi Agua','The Map':'El Mapa','Evidence':'Evidencia','Protocols':'Protocolos','About':'Acerca de','FAQ':'Preguntas','The Ranking':'La Clasificación','Compare Miami-Dade systems':'Comparar sistemas de Miami-Dade','Read the evidence':'Ver la evidencia'};
  var WCT={'Federal limit':'Límite federal','Safe level':'Nivel seguro','Total PFAS':'PFAS total'};
@@ -4325,7 +4682,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   // nav labels
   try{ document.querySelectorAll('.rw-links a, #rwPanelHead .ph-nav a, .rv-next a').forEach(function(a){ if(a.classList.contains('rw-lang'))return; if(a.__i18n_en===undefined)a.__i18n_en=a.textContent; var en=a.__i18n_en.trim(); if(es&&NAV[en])a.textContent=NAV[en]; else a.textContent=a.__i18n_en; }); }catch(e){}
   // static chart row labels
-  try{ document.querySelectorAll('.wc-t').forEach(function(el){ if(el.id==='wcT1')return; if(el.__i18n_en===undefined)el.__i18n_en=el.textContent; var en=el.__i18n_en.trim(); if(es&&WCT[en])el.textContent=WCT[en]; else el.textContent=el.__i18n_en; }); }catch(e){}
+  try{ document.querySelectorAll('.wc-t, .mw2 .ct').forEach(function(el){ if(el.id==='wcT1')return; if(el.__i18n_en===undefined)el.__i18n_en=el.textContent; var en=el.__i18n_en.trim(); if(es&&WCT[en])el.textContent=WCT[en]; else el.textContent=el.__i18n_en; }); }catch(e){}
   // ranking row meta lines
   try{ document.querySelectorAll('.rwrk-meta').forEach(function(el){ if(el.__i18n_en===undefined)el.__i18n_en=el.textContent; if(es){ el.textContent=el.__i18n_en.replace('ppt total','ppt en total').replace('over the federal limit','por encima del límite federal'); } else el.textContent=el.__i18n_en; }); }catch(e){}
   // demand contact links are populated per-system in rwBuildScore
@@ -4334,11 +4691,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   try{ var r=window.rwScore(z);
    var w=document.getElementById('rsWord'); if(w&&WORD[w.textContent])w.textContent=WORD[w.textContent];
    var b=document.getElementById('rsBand'); if(b&&BAND[b.textContent])b.textContent=BAND[b.textContent];
-   var cf=document.getElementById('rsConf'); if(cf)cf.innerHTML=r.deflt?'Estimación regional · registro del sistema del condado · actualizado julio 2026':'Alta confianza · muestras de laboratorio registradas · actualizado julio 2026';
-   var wl=document.getElementById('wcLabel'); if(wl)wl.textContent=r.ndet+' compuestos PFAS medidos · '+r.name;
+   var cf=document.getElementById('rsConf'); if(cf)cf.innerHTML='Tu sistema ha mostrado hasta <b>'+r.total+' ppt de PFAS totales</b>'+(r.deflt?' (estimación regional)':'');
+   var wl=document.getElementById('wcLabel'); if(wl)wl.textContent='Barras: PFOS · '+r.ndet+' compuestos PFAS medidos en '+r.name;
    var t1=document.getElementById('wcT1'); if(t1)t1.textContent='Tu agua';
-   var sc2=document.getElementById('rsSrc'); if(sc2){var kn=!r.deflt; sc2.innerHTML=(kn?'<span class="rs-src-badge">MEDIDO</span> ':'<span class="rs-src-badge amb">REGIONAL</span> ')+'<b>'+r.pfos+' ppt</b> de PFOS'+(kn?'':' (sistema principal del condado)')+' en el agua tratada &mdash; fuente: <a href="'+r.rpt+'" target="_blank" rel="noopener">informe de '+r.name+'</a> + pruebas federales EPA UCMR5. Las empresas deben cumplir el límite federal de 4&nbsp;ppt para <b>abril de 2029</b> &mdash; este es tu nivel de hoy. <span class="rs-src-ind">Por Gregory James Rigano · Rigano Water Institute &mdash; independiente, sin fines comerciales, no vendemos nada. <a onclick="rwView(&#39;about&#39;)">Quiénes somos &rarr;</a></span>';}
-   var xo=Math.max(1,Math.round(r.pfos/4)); var av=Math.max(1,Math.round(r.pfos/0.02)); var vd=document.getElementById('rsVerdict'); if(vd)vd.innerHTML='En términos simples — el agua de tu llave está aproximadamente <b>'+xo+'× por encima del límite federal de PFAS</b> — y unas <b>'+av.toLocaleString()+'× el aviso de salud de la EPA de 2022</b>. La única cantidad considerada segura es <b>cero</b>.';
+   var sc2=document.getElementById('rsSrc'); if(sc2){var kn=!r.deflt; sc2.innerHTML=(kn?'<span class="rs-src-badge">MEDIDO</span> ':'<span class="rs-src-badge amb">REGIONAL</span> ')+'<b>'+r.pfos+' ppt</b> de PFOS'+(kn?'':' (sistema principal del condado)')+' en el agua tratada &mdash; fuente: <a href="'+r.rpt+'" target="_blank" rel="noopener">informe de '+r.name+'</a> + pruebas federales EPA UCMR5. Las empresas deben cumplir el límite federal de 4&nbsp;ppt para <b>abril de 2029</b> &mdash; este es tu nivel de hoy.';}
+   var xo=Math.max(1,Math.round(r.pfos/4)); var av=Math.max(1,Math.round(r.pfos/0.02)); var vd=document.getElementById('rsVerdict'); if(vd)vd.innerHTML='En términos simples — el agua de tu llave está aproximadamente <b>'+xo+'× por encima del límite federal de PFAS</b> — y unas <b>'+av.toLocaleString()+'× el aviso de salud de la EPA de 2022</b>. Según la EPA, el único nivel considerado seguro es <b>cero</b>.';
    window.rwApplyLang('es');
   }catch(e){}
  };
