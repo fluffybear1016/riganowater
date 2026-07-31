@@ -4341,6 +4341,7 @@ var RW_CAPS=[
  var cur=-1;
  function tick(){
   var t=v.currentTime||0, hit=-1;
+  try{v.playbackRate=(t<(RW_CAPS[0][0]-0.4))?2.0:0.75;}catch(_e){}
   for(var i=0;i<RW_CAPS.length;i++){ if(t>=RW_CAPS[i][0]&&t<RW_CAPS[i][1]){hit=i;break;} }
   box.style.opacity=(hit>=0)?1:0; /* only show the cover while a caption is active — no blank flash */
   if(hit!==cur){ cur=hit;
@@ -5185,7 +5186,7 @@ body:has(#rwPanel.on) :is(#legend,#zoomhint,#bottom,#shareBtn,#mapFail,#howto,
 @keyframes rwCuePulse{0%{box-shadow:0 0 0 0 rgba(255,107,90,.6)}
   70%{box-shadow:0 0 0 9px rgba(255,107,90,0)}100%{box-shadow:0 0 0 0 rgba(255,107,90,0)}}
 body:not(.rw-landing) #rwFlyCue{display:none}
-@media(max-width:900px){#rwFlyCue{left:12px;bottom:12px;font-size:9.5px;letter-spacing:.11em;padding:6px 11px 6px 9px}}
+@media(max-width:900px){#rwFlyCue{left:12px;top:12px;bottom:auto;font-size:9.5px;letter-spacing:.11em;padding:6px 11px 6px 9px}}
 @media(prefers-reduced-motion:reduce){#rwFlyCue,#rwFlyCue .fc-dot{animation:none}}
 
 /* the kidney line sits with the health block */
