@@ -2085,9 +2085,9 @@ if(typeof L==='undefined'){(function(){var d=document.createElement('div');d.id=
 var map=L.map('map',{zoomControl:false,minZoom:9,maxZoom:18}).setView([25.80,-80.28],11);
 var ATTR='Geometry: Miami-Dade County &amp; Florida DEP · Measurements: FIU (Quinete lab)';
 var BASES={
- light:{u:'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',o:{attribution:'&copy; OSM &copy; CARTO · '+ATTR,subdomains:'abcd',maxZoom:19}},
+ light:{u:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',o:{attribution:'&copy; Esri, &copy; OpenStreetMap · '+ATTR,maxNativeZoom:16,maxZoom:19}},
  satellite:{u:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',o:{attribution:'Imagery &copy; Esri · '+ATTR,maxZoom:19}},
- dark:{u:'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',o:{attribution:'&copy; OSM &copy; CARTO · '+ATTR,subdomains:'abcd',maxZoom:19,opacity:.92}}
+ dark:{u:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',o:{attribution:'&copy; Esri, &copy; OpenStreetMap · '+ATTR,maxNativeZoom:16,maxZoom:19,opacity:.92}}
 };
 var _baseL=null;
 function setBase(k){if(_baseL)map.removeLayer(_baseL);_baseL=L.tileLayer(BASES[k].u,BASES[k].o).addTo(map);_baseL.bringToBack();
